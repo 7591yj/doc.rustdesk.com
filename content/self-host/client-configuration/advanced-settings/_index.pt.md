@@ -1,31 +1,31 @@
 ---
-title: Configurações avançadas
+title: Configurações Avançadas
 weight: 49
 ---
 
-Todas as configurações avançadas de clientes personalizados estão cobertas aqui.
+Todas as configurações avançadas em clientes personalizados são abordadas aqui.
 
-## Níveis de Privilegio para Configurações
+## Níveis de Privilégio para Configurações
 
-Existem quatro tipos de configurações:
+Há quatro tipos de configurações:
 
-1. Configurações de Sobrescrita, em "Web Console → Clientes Personalizados"
-2. Configurações Padrão, em "Web Console → Clientes Personalizados"
-3. Configurações de Usuário, no cliente RustDesk
-4. Configurações de Estratégia, em "Web Console → Estratégias"
+1. Configurações de substituição, em `Console Web` → `Clientes Personalizados`
+2. Configurações padrão, em `Console Web` → `Clientes Personalizados`
+3. Configurações do usuário, no cliente RustDesk
+4. Configurações de estratégia, em `Console Web` → `Estratégias`
 
-A hierarquia de privilégios para essas configurações é a seguinte: `Sobrescrita > Estratégia > Usuário > Padrão`.
+A hierarquia de privilégios para essas configurações é a seguinte: `Substituição > Estratégia > Usuário > Padrão`.
 
 ## Configurações de Segurança
 
 ### access-mode
 
-Define o modo de acesso (permissões) para conexões recebidas.
+Define o modo de acesso (permissões) para conexões de entrada.
 
 **Localização**:
 
-1. **Desktop:** Configurações → Segurança → Permissões
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -33,12 +33,12 @@ Define o modo de acesso (permissões) para conexões recebidas.
 
 ### enable-keyboard
 
-Habilita a entrada de teclado/mouse para conexões recebidas.
+Habilita entrada de teclado/mouse para conexões de entrada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar teclado
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar teclado
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -46,12 +46,12 @@ Habilita a entrada de teclado/mouse para conexões recebidas.
 
 ### enable-clipboard
 
-Habilita copiar e colar para conexões recebidas.
+Habilita copiar e colar para conexões de entrada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar clipboard
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar área de transferência
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -59,25 +59,50 @@ Habilita copiar e colar para conexões recebidas.
 
 ### enable-file-transfer
 
-Habilita copiar e colar arquivos ou transferência de arquivos (sessão) para conexões recebidas.
+Habilita cópia e colagem de arquivos ou transferência de arquivos (sessão) para conexões de entrada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar transferência de arquivos
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar transferência de arquivos
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-file-transfer=Y` |
 
-### enable-audio
+### enable-camera
 
-Habilita gravação e transferência de áudio para o par.
+Habilita câmera para conexões de entrada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar áudio
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar câmera
+2. **Móvel**
+
+| Instalação necessária | Valores | Padrão | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-camera=Y` |
+
+### enable-remote-printer
+
+Habilita impressora remota para conexões de entrada.
+
+**Localização**:
+
+1. **Windows** Configurações → Segurança → Permissões → Habilitar impressora remota
+
+| Instalação necessária | Valores | Padrão | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-remote-printer=Y` |
+
+### enable-audio
+
+Habilita gravação de áudio e transferência para o par.
+
+**Localização**:
+
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar áudio
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -89,8 +114,8 @@ Habilita tunelamento TCP.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar tunelamento TCP
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar tunelamento TCP
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -102,8 +127,8 @@ Habilita reinicialização pelo lado de controle.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar reinicialização remota
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar reinicialização remota
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -111,12 +136,12 @@ Habilita reinicialização pelo lado de controle.
 
 ### enable-record-session
 
-Habilita a gravação de sessões.
+Habilita gravação de sessões.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar gravação de sessão
-2. **Mobile**: Configurações → Compartilhar tela → Habilitar gravação de sessão
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar gravação de sessão
+2. **Móvel** Configurações → Compartilhar tela → Habilitar gravação de sessão
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -124,12 +149,12 @@ Habilita a gravação de sessões.
 
 ### enable-block-input
 
-Permite que o lado de controle bloqueie a entrada de outros usuários.
+Habilita o lado de controle para bloquear entrada de outros usuários.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar bloqueio de entrada do usuário (somente Windows)
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar bloqueio de entrada do usuário (apenas Windows)
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -137,27 +162,27 @@ Permite que o lado de controle bloqueie a entrada de outros usuários.
 
 ### allow-remote-config-modification
 
-Permite que o lado de controle altere as configurações na IU controlada do RustDesk.
+Permite ao lado de controle alterar configurações na UI RustDesk controlada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Permissões → Habilitar modificação remota da configuração
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar modificação de configuração remota
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | Y | `allow-remote-config-modification=Y` |
+| N | Y, N | N | `allow-remote-config-modification=Y` |
 
 ### enable-lan-discovery
 
-Permite que pares da LAN me descubram.
+Permite que pares LAN me descubram.
 
-Após a descoberta da rede local, o [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) pode funcionar se for compatível localmente.
+Após descoberta LAN, [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) pode funcionar se suportado localmente.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Segurança → Negar descoberta de rede local
-2. **Mobile**: Configurações → Compartilhar tela → Negar descoberta de rede local
+1. **Desktop** Configurações → Segurança → Segurança → Negar descoberta LAN
+2. **Móvel** Configurações → Compartilhar tela → Negar descoberta LAN
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -169,8 +194,8 @@ Habilita acesso direto por IP.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Segurança → Habilitar acesso direto por IP
-2. **Mobile**: Configurações → Compartilhar tela → Servidor direto
+1. **Desktop** Configurações → Segurança → Segurança → Habilitar acesso direto por IP
+2. **Móvel** Configurações → Compartilhar tela → Acesso direto por IP
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -182,8 +207,8 @@ Porta de acesso direto por IP.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Segurança → Porta de acesso direto por IP (Mostrado se "Habilitar acesso direto por IP" estiver marcado)
-2. **Mobile**: Configurações → Compartilhar tela → Servidor direto
+1. **Desktop** Configurações → Segurança → Segurança → Porta de acesso direto por IP (Mostrar se "Habilitar acesso direto por IP" estiver marcado)
+2. **Móvel** Configurações → Compartilhar tela → Acesso direto por IP
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -195,35 +220,35 @@ Usar lista branca de IP.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Segurança → Usar lista branca de IP
-2. **Mobile**: Configurações → Compartilhar tela → Usar lista branca de IP
+1. **Desktop** Configurações → Segurança → Segurança → Usar lista branca de IP
+2. **Móvel** Configurações → Compartilhar tela → Usar lista branca de IP
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
-| N | `,` or `<ip1>,<ip2>,<ip3>` | `,` means no filter | `whitelist=,` |
+| N | `,` ou `<ip1>,<ip2>,<ip3>` | `,` significa sem filtro | `whitelist=,` |
 
 ### allow-auto-disconnect & auto-disconnect-timeout
 
-Fechar automaticamente sessões recebidas após um período de inatividade do usuário.
+Fecha automaticamente sessões de entrada após um período de inatividade do usuário.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Segurança → Fechar automaticamente sessões recebidas em caso de inatividade do usuário
-2. **Mobile**: Configurações → Compartilhar tela → Fechar automaticamente sessões recebidas em caso de inatividade do usuário
+1. **Desktop** Configurações → Segurança → Segurança → Fechar automaticamente sessões de entrada na inatividade do usuário
+2. **Móvel** Configurações → Compartilhar tela → Fechar automaticamente sessões de entrada na inatividade do usuário
 
 | Opção | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: | :------: |
 | allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
-| auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
+| auto-disconnect-timeout | N | Timeout em minutos | 10 | `auto-disconnect-timeout=10` |
 
 ### allow-only-conn-window-open
 
-Permitir conexão apenas se a janela do RustDesk estiver aberta.
+Permite conexão apenas se a janela RustDesk estiver aberta.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Segurança → Permitir conexão apenas se a janela do RustDesk estiver aberta
-2. **Mobile**
+1. **Desktop** Configurações → Segurança → Segurança → Permitir conexão apenas se a janela RustDesk estiver aberta
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -231,16 +256,24 @@ Permitir conexão apenas se a janela do RustDesk estiver aberta.
 
 ### approve-mode
 
-Aceitar conexões recebidas por senha ou clique manual.
+Aceita conexões de entrada via senha ou clique manual.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Segurança → Senha → Menu suspenso
-2. **Mobile**: Compartilhar tela → Menu suspenso no canto superior direito
+1. **Desktop** Configurações → Segurança → Senha → Caixa suspensa
+2. **Móvel** Compartilhar tela → Menu suspenso superior direito
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | password, click, password-click | password-click | `approve-mode=password-click` |
+
+### verification-method
+
+Que tipo de senha pode ser usada, `senha temporária` refere-se à senha aleatória de uso único.
+
+| Instalação necessária | Valores | Padrão | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
 
 ### proxy-url
 
@@ -250,14 +283,14 @@ Atualmente suporta `http` e `socks5`.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Rede → Proxy → Proxy Socks5/Http(s)
-2. **Mobile**
+1. **Desktop** Configurações → Rede → Proxy → Proxy Socks5/Http(s)
+2. **Móvel**
 
 Exemplos:
 
-1. **http** `url-do-proxy=http://192.168.0.2:12345`
-2. **https** `url-do-proxy=https://192.168.0.2:12345`
-3. **socks5** `url-do-proxy=socks5://192.168.0.2:1080`
+1. **http** `proxy-url=http://192.168.0.2:12345`
+2. **https** `proxy-url=https://192.168.0.2:12345`
+3. **socks5** `proxy-url=socks5://192.168.0.2:1080`
 
 ### proxy-username & proxy-password
 
@@ -265,8 +298,8 @@ Nome de usuário e senha do proxy.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Rede → Proxy → Proxy Socks5/Http(s)
-2. **Mobile**
+1. **Desktop** Configurações → Rede → Proxy → Proxy Socks5/Http(s)
+2. **Móvel**
 
 | Opção | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: | :------: |
@@ -277,12 +310,12 @@ Nome de usuário e senha do proxy.
 
 ### theme
 
-Controla o tema da interface do cliente RustDesk.
+Controla o tema da UI do cliente RustDesk.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Tema
-2. **Mobile**: Configurações → Configurações → Tema
+1. **Desktop** Configurações → Geral → Tema
+2. **Móvel** Configurações → Configurações → Tema
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -294,27 +327,27 @@ Controla o idioma do cliente RustDesk.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Idioma
-2. **Mobile**: Configurações → Configurações → Idioma
+1. **Desktop** Configurações → Geral → Idioma
+2. **Móvel** Configurações → Configurações → Idioma
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | default, ar, bg, ... | default | `lang=default` |
 
-Os idiomas disponíveis atualmente são:
+Os idiomas atualmente disponíveis são:
 
 ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
 
-Você pode verificar o arquivo [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) no código para obter a lista de idiomas mais recente.
+Você pode verificar [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) no código para a lista de idiomas mais recente.
 
 ### allow-auto-record-incoming
 
-Gravar automaticamente sessões recebidas.
+Grava automaticamente sessões de entrada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Gravação → Gravar automaticamente sessões recebidas
-2. **Mobile**: Configurações → Gravação → Gravar automaticamente sessões recebidas
+1. **Desktop** Configurações → Geral → Gravação → Gravar automaticamente sessões de entrada
+2. **Móvel** Configurações → Gravação → Gravar automaticamente sessões de entrada
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -322,12 +355,12 @@ Gravar automaticamente sessões recebidas.
 
 ### allow-auto-record-outgoing
 
-Grave automaticamente sessões de saída.
+Grava automaticamente sessões de saída.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Gravação → Grave automaticamente sessões de saída
-2. **Mobile**: Configurações → Gravação → Grave automaticamente sessões de saída
+1. **Desktop** Configurações → Geral → Gravação → Gravar automaticamente sessões de saída
+2. **Móvel** Configurações → Gravação → Gravar automaticamente sessões de saída
 
 | Instalação necessária | Valores | Padrão | Exemplo | Versão |
 | :------: | :------: | :------: | :------: | :------: |
@@ -339,26 +372,26 @@ O diretório para salvar vídeos gravados.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Gravação → Diretório de salvamento de vídeo
-2. **Mobile**: Configurações → Gravação
+1. **Desktop** Configurações → Geral → Gravação → Diretório de salvamento de vídeo
+2. **Móvel** Configurações → Gravação
 
 Valores padrão:
 
-1. **macOS** ~/Movies/**nome_do_aplicativo**
-2. **Linux** ~/Videos/**nome_do_aplicativo**
-3. **Windows** %USERPROFILE%\Videos\**nome_do_aplicativo**
-4. **Android** /Storage/emulated/0/**nome_do_aplicativo**/ScreenRecord
+1. **macOS** ~/Movies/**app_name**
+2. **Linux** ~/Videos/**app_name**
+3. **Windows** %USERPROFILE%\Videos\\**app_name**
+4. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
 
-**Nota**: Substitua **nome_do_aplicativo** pelo nome atual do aplicativo.
+**Nota**: Substitua **app_name** pelo nome atual do aplicativo.
 
 ### enable-confirm-closing-tabs
 
-Controla se mostrar uma caixa de diálogo de confirmação antes de fechar todas as abas remotas.
+Controla se deve mostrar um diálogo de confirmação antes de fechar todas as abas remotas.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Outros → Confirmar antes de fechar várias abas
-2. **Mobile**
+1. **Desktop** Configurações → Geral → Outro → Confirmar antes de fechar múltiplas abas
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -366,12 +399,12 @@ Controla se mostrar uma caixa de diálogo de confirmação antes de fechar todas
 
 ### enable-abr
 
-Habilitar taxa de bits adaptativa.
+Habilita bitrate adaptativo.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Outros → Taxa de bits adaptativa
-2. **Mobile**: Configurações → Compartilhar tela → Taxa de bits adaptativa (beta)
+1. **Desktop** Configurações → Geral → Outro → Bitrate adaptativo
+2. **Móvel** Configurações → Compartilhar tela → Bitrate adaptativo (beta)
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -379,12 +412,12 @@ Habilitar taxa de bits adaptativa.
 
 ### allow-remove-wallpaper
 
-Remover papel de parede durante sessões recebidas.
+Remove papel de parede durante sessões de entrada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Outros → Remover papel de parede durante sessões recebidas
-2. **Mobile**
+1. **Desktop** Configurações → Geral → Outro → Remover papel de parede durante sessões de entrada
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -392,12 +425,12 @@ Remover papel de parede durante sessões recebidas.
 
 ### enable-open-new-connections-in-tabs
 
-Controla se usar uma nova aba ou uma nova janela para abrir uma nova conexão.
+Controla se deve usar uma nova aba ou uma nova janela para abrir uma nova conexão.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Outros → Abrir conexão em nova aba
-2. **Mobile**
+1. **Desktop** Configurações → Geral → Outro → Abrir conexão em nova aba
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -409,8 +442,8 @@ Sempre usar renderização por software.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Outros → Sempre usar renderização por software
-2. **Mobile**
+1. **Desktop** Configurações → Geral → Outro → Sempre usar renderização por software
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -418,14 +451,14 @@ Sempre usar renderização por software.
 
 ### allow-linux-headless
 
-Permitir conexão recebida se não houver monitores.
+Permitir conexão de entrada se não houver displays.
 
-Esta opção requer ambiente de desktop, servidor Xorg e GDM, consulte [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
+Esta opção requer ambiente desktop, servidor Xorg e GDM, veja [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
 
 **Localização**:
 
-1. **Desktop**: Configurações → Geral → Outros → Permitir Linux displays
-2. **Mobile**
+1. **Desktop** Configurações → Geral → Outro → Permitir Linux headless
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -433,12 +466,12 @@ Esta opção requer ambiente de desktop, servidor Xorg e GDM, consulte [PR 3902]
 
 ### enable-hwcodec
 
-Habilitar codificação por hardware para tornar a imagem mais suave.
+Habilita codificação por hardware para tornar a imagem mais suave.
 
 **Localização**:
 
 1. **Desktop**
-2. **Mobile**: Configurações → Codec de hardware
+2. **Móvel** Configurações → Codec de hardware
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -446,19 +479,19 @@ Habilitar codificação por hardware para tornar a imagem mais suave.
 
 ### peer-card-ui-type
 
-Controla a visualização dos cartões de pares, incluindo "Blocos grandes", "Blocos pequenos" e "Lista".
+Controla a visualização de cartões de pares, inclui "Tiles grandes", "Tiles pequenos" e "Lista".
 
 **Localização**:
 
-1. **Desktop**: Início → Painel de pares → Ícone de grade superior direito
-2. **Mobile**
+1. **Desktop** Início → Painel de pares → Ícone de grade superior direito
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
 
-**0** Blocos grandes  
-**1** Blocos pequenos
+**0** Tiles grandes  
+**1** Tiles pequenos  
 **2** Lista
 
 ### peer-sorting
@@ -467,8 +500,8 @@ Controla a ordem dos cartões de pares.
 
 **Localização**:
 
-1. **Desktop**: Início → Painel de pares → Ícone de classificação superior direito
-2. **Mobile**
+1. **Desktop** Início → Painel de pares → Ícone de classificação superior direito
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -476,12 +509,12 @@ Controla a ordem dos cartões de pares.
 
 ### sync-ab-with-recent-sessions
 
-Controla se sincronizar a agenda com sessões recentes.
+Controla se deve sincronizar o catálogo de endereços com sessões recentes.
 
 **Localização**:
 
-1. **Desktop**: Início → Painel de pares → Agenda → Tags → Menu suspenso → Sincronizar com sessões recentes
-2. **Mobile**: Início → Painel de pares → Agenda → Tags → Menu suspenso → Sincronizar com sessões recentes
+1. **Desktop** Início → Painel de pares → Catálogo de endereços → Tags → Menu suspenso → Sincronizar com sessões recentes
+2. **Móvel** Início → Painel de pares → Catálogo de endereços → Tags → Menu suspenso → Sincronizar com sessões recentes
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -489,12 +522,12 @@ Controla se sincronizar a agenda com sessões recentes.
 
 ### sync-ab-tags
 
-Controla se ordenar as tags da agenda.
+Controla se deve classificar as tags do catálogo de endereços.
 
 **Localização**:
 
-1. **Desktop**: Início → Painel de pares → Agenda → Tags → Menu suspenso → Ordenar tags
-2. **Mobile**: Início → Painel de pares → Agenda → Tags → Menu suspenso → Ordenar tags
+1. **Desktop** Início → Painel de pares → Catálogo de endereços → Tags → Menu suspenso → Classificar tags
+2. **Móvel** Início → Painel de pares → Catálogo de endereços → Tags → Menu suspenso → Classificar tags
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -502,31 +535,31 @@ Controla se ordenar as tags da agenda.
 
 ### filter-ab-by-intersection
 
-Filtrar agenda por interseção de tags.
+Filtrar catálogo de endereços por interseção de tags.
 
 **Prévia**: [PR #5985](https://github.com/rustdesk/rustdesk/pull/5985)
 
 **Localização**:
 
-1. **Desktop**: Início → Painel de pares → Agenda → Tags → Menu suspenso → Filtrar por interseção
-2. **Mobile**: Início → Painel de pares → Agenda → Tags → Menu suspenso → Filtrar por interseção
+1. **Desktop** Início → Painel de pares → Catálogo de endereços → Tags → Menu suspenso → Filtrar por interseção
+2. **Móvel** Início → Painel de pares → Catálogo de endereços → Tags → Menu suspenso → Filtrar por interseção
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
 
-## Configurações de Exibição
+## Configurações de Display
 
 ### view-only
 
-Esta opção definirá a opção "somente visualização" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "apenas visualização" para cada par após a primeira conexão.
 
-Em seguida, a opção "somente visualização" nas configurações de cada par controlará se a conexão é somente visualização.
+Então a opção "apenas visualização" nas configurações de cada par controlará se a conexão é apenas visualização.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Modo de visualização
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Modo de visualização
+1. **Desktop** Configurações → Display → Outras opções padrão → Modo de visualização
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Modo de visualização
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -534,14 +567,14 @@ Em seguida, a opção "somente visualização" nas configurações de cada par c
 
 ### show-monitors-toolbar
 
-Controla se mostrar monitores na barra de ferramentas.
+Controla se deve mostrar monitores na barra de ferramentas.
 
-![mostrar-barra-de-ferramentas-de-monitores](/docs/en/self-host/client-configuration/advanced-settings/images/show-monitors-toolbar.png)
+![show-monitors-toolbar](/docs/en/self-host/client-configuration/advanced-settings/images/show-monitors-toolbar.png)
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Mostrar barra de ferramentas de monitores
-2. **Mobile**
+1. **Desktop** Configurações → Display → Outras opções padrão → Mostrar barra de ferramentas de monitores
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -549,12 +582,12 @@ Controla se mostrar monitores na barra de ferramentas.
 
 ### collapse-toolbar
 
-Controla se a barra de ferramentas remota é colapsada após a conexão.
+Controla se a barra de ferramentas remota é recolhida após conectar.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Colapsar barra de ferramentas
-2. **Mobile**
+1. **Desktop** Configurações → Display → Outras opções padrão → Recolher barra de ferramentas
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -562,14 +595,14 @@ Controla se a barra de ferramentas remota é colapsada após a conexão.
 
 ### show-remote-cursor
 
-Esta opção definirá a opção "mostrar cursor remoto" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "mostrar cursor remoto" para cada par após a primeira conexão.
 
-Em seguida, a opção "mostrar cursor remoto" nas configurações de cada par controlará se o cursor remoto é exibido na página de controle remoto.
+Então a opção "mostrar cursor remoto" nas configurações de cada par controlará se o cursor remoto é exibido na página de controle remoto.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Mostrar cursor remoto
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Mostrar cursor remoto
+1. **Desktop** Configurações → Display → Outras opções padrão → Mostrar cursor remoto
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Mostrar cursor remoto
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -577,16 +610,16 @@ Em seguida, a opção "mostrar cursor remoto" nas configurações de cada par co
 
 ### follow-remote-cursor
 
-Esta opção definirá a opção "seguir cursor remoto" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "seguir cursor remoto" para cada par após a primeira conexão.
 
-Em seguida, a opção "seguir cursor remoto" nas configurações de cada par controlará se seguir o cursor remoto.
+Então a opção "seguir cursor remoto" nas configurações de cada par controlará se deve seguir o cursor remoto.
 
 **Prévia**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Seguir cursor remoto
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Seguir cursor remoto
+1. **Desktop** Configurações → Display → Outras opções padrão → Seguir cursor remoto
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Seguir cursor remoto
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -594,16 +627,16 @@ Em seguida, a opção "seguir cursor remoto" nas configurações de cada par con
 
 ### follow-remote-window
 
-Esta opção definirá a opção "seguir janela remota" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "seguir janela remota" para cada par após a primeira conexão.
 
-Em seguida, a opção "seguir janela remota" nas configurações de cada par controlará se seguir a janela remota.
+Então a opção "seguir janela remota" nas configurações de cada par controlará se deve seguir a janela remota.
 
 **Prévia**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Seguir foco da janela remota
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Seguir foco da janela remota
+1. **Desktop** Configurações → Display → Outras opções padrão → Seguir foco da janela remota
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Seguir foco da janela remota
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -611,14 +644,14 @@ Em seguida, a opção "seguir janela remota" nas configurações de cada par con
 
 ### zoom-cursor
 
-Esta opção definirá a opção "zoom-cursor" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "zoom cursor" para cada par após a primeira conexão.
 
-A opção "zoom-cursor" nas configurações de cada par controlará então se o cursor será escalonado com base na escala de imagem atual.
+A opção "zoom cursor" nas configurações de cada par controlará então se o cursor é dimensionado com base na escala de imagem atual.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Zoom do cursor
-2. **Mobile**
+1. **Desktop** Configurações → Display → Outras opções padrão → Zoom cursor
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -626,14 +659,14 @@ A opção "zoom-cursor" nas configurações de cada par controlará então se o 
 
 ### show-quality-monitor
 
-Esta opção definirá a opção "mostrar-monitor-de-qualidade" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "mostrar monitor de qualidade" para cada par após a primeira conexão.
 
-A opção "mostrar-monitor-de-qualidade" nas configurações de cada par controlará então se mostrar o monitor de qualidade.
+A opção "mostrar monitor de qualidade" nas configurações de cada par controlará então se deve mostrar o monitor de qualidade.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Mostrar monitor de qualidade
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Mostrar monitor de qualidade
+1. **Desktop** Configurações → Display → Outras opções padrão → Mostrar monitor de qualidade
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Mostrar monitor de qualidade
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -641,14 +674,14 @@ A opção "mostrar-monitor-de-qualidade" nas configurações de cada par control
 
 ### disable-audio
 
-Esta opção definirá a opção "desabilitar-audio" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "desabilitar áudio" para cada par após a primeira conexão.
 
-A opção "desabilitar-audio" nas configurações de cada par controlará então se reproduzir som.
+A opção "desabilitar áudio" nas configurações de cada par controlará então se deve reproduzir som.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Silenciar
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Silenciar
+1. **Desktop** Configurações → Display → Outras opções padrão → Mudo
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Mudo
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -656,14 +689,14 @@ A opção "desabilitar-audio" nas configurações de cada par controlará então
 
 ### enable-file-copy-paste
 
-Esta opção definirá a opção "habilitar-copiar-colar-arquivos" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "habilitar cópia e colagem de arquivo" para cada par após a primeira conexão.
 
-A opção "habilitar-copiar-colar-arquivos" nas configurações de cada par controlará então habilitar copiar e colar arquivos na conexão.
+A opção "habilitar cópia e colagem de arquivo" nas configurações de cada par controlará então se deve habilitar cópia e colagem de arquivo na conexão.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Habilitar copiar e colar arquivos (somente Windows)
-2. **Mobile**
+1. **Desktop** Configurações → Display → Outras opções padrão → Habilitar cópia e colagem de arquivo (apenas Windows)
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -671,14 +704,14 @@ A opção "habilitar-copiar-colar-arquivos" nas configurações de cada par cont
 
 ### disable-clipboard
 
-Esta opção definirá a opção "desabilitar-clipboard" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "desabilitar área de transferência" para cada par após a primeira conexão.
 
-A opção "desabilitar-clipboard" nas configurações de cada par controlará então se habilitar a cópia e colagem de texto.
+A opção "desabilitar área de transferência" nas configurações de cada par controlará então se deve habilitar cópia e colagem de texto.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Desabilitar clipboard
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Desabilitar clipboard
+1. **Desktop** Configurações → Display → Outras opções padrão → Desabilitar área de transferência
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Desabilitar área de transferência
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -686,14 +719,14 @@ A opção "desabilitar-clipboard" nas configurações de cada par controlará en
 
 ### lock-after-session-end
 
-Esta opção definirá a opção "bloquear-após-fim-da-sessão" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "bloquear após fim da sessão" para cada par após a primeira conexão.
 
-A opção "bloquear-após-fim-da-sessão" nas configurações de cada par controlará então se bloquear a máquina do par após o fim da sessão.
+A opção "bloquear após fim da sessão" nas configurações de cada par controlará então se deve bloquear a máquina par após o fim da sessão.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Bloquear após fim da sessão
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Bloquear após fim da sessão
+1. **Desktop** Configurações → Display → Outras opções padrão → Bloquear após fim da sessão
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Bloquear após fim da sessão
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -701,14 +734,14 @@ A opção "bloquear-após-fim-da-sessão" nas configurações de cada par contro
 
 ### privacy-mode
 
-Esta opção definirá a opção "modo-privacidade" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "modo privacidade" para cada par após a primeira conexão.
 
-A opção "modo-privacidade" nas configurações de cada par controlará então se usar o modo privacidade após conectar.
+A opção "modo privacidade" nas configurações de cada par controlará então se deve usar modo privacidade após conectar.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Modo privacidade
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Modo privacidade
+1. **Desktop** Configurações → Display → Outras opções padrão → Modo privacidade
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Modo privacidade
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -716,14 +749,14 @@ A opção "modo-privacidade" nas configurações de cada par controlará então 
 
 ### touch-mode
 
-Esta opção definirá a opção "modo-toque" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "modo toque" para cada par após a primeira conexão.
 
-A opção "modo-toque" nas configurações de cada par controlará então se usar o modo toque ou modo mouse.
+A opção "modo toque" nas configurações de cada par controlará então se deve usar modo toque ou modo mouse.
 
 **Localização**:
 
 1. **Desktop**
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Modo toque
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Modo toque
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -731,14 +764,14 @@ A opção "modo-toque" nas configurações de cada par controlará então se usa
 
 ### i444
 
-Esta opção definirá a opção "i444" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "i444" para cada par após a primeira conexão.
 
-A opção "i444" nas configurações de cada par controlará então se usar cores verdadeiras.
+A opção "i444" nas configurações de cada par controlará então se deve usar cor verdadeira.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Cor verdadeira (4:4:4)
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Cor verdadeira (4:4:4)
+1. **Desktop** Configurações → Display → Outras opções padrão → Cor verdadeira (4:4:4)
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Cor verdadeira (4:4:4)
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -746,14 +779,14 @@ A opção "i444" nas configurações de cada par controlará então se usar core
 
 ### reverse-mouse-wheel
 
-Esta opção definirá a opção "inverter-roda-do-mouse" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "reverter roda do mouse" para cada par após a primeira conexão.
 
-A opção "inverter-roda-do-mouse" nas configurações de cada par controlará então se inverter a roda do mouse.
+A opção "reverter roda do mouse" nas configurações de cada par controlará então se deve reverter a roda do mouse.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Inverter roda do mouse
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Inverter roda do mouse
+1. **Desktop** Configurações → Display → Outras opções padrão → Reverter roda do mouse
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Reverter roda do mouse
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -761,14 +794,14 @@ A opção "inverter-roda-do-mouse" nas configurações de cada par controlará e
 
 ### swap-left-right-mouse
 
-Esta opção definirá a opção "trocar-botões-do-mouse" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "trocar botão esquerdo-direito do mouse" para cada par após a primeira conexão.
 
-A opção "trocar-botões-do-mouse" nas configurações de cada par controlará então se trocar os botões esquerdo e direito do mouse.
+A opção "trocar botão esquerdo-direito do mouse" nas configurações de cada par controlará então se deve trocar o botão esquerdo-direito do mouse.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Trocar botões do mouse
-2. **Mobile**: Configurações → Configurações de exibição → Outras opções padrão → Trocar botões do mouse
+1. **Desktop** Configurações → Display → Outras opções padrão → Trocar botão esquerdo-direito do mouse
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Trocar botão esquerdo-direito do mouse
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -776,16 +809,16 @@ A opção "trocar-botões-do-mouse" nas configurações de cada par controlará 
 
 ### displays-as-individual-windows
 
-Esta opção definirá a opção "exibir-monitores-como-janelas-individuais" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "displays como janelas individuais" para cada par após a primeira conexão.
 
-A opção "exibir-monitores-como-janelas-individuais" nas configurações de cada par controlará então se mostrar monitores como janelas individuais.
+A opção "displays como janelas individuais" nas configurações de cada par controlará então se deve mostrar displays como janelas individuais.
 
-**Preview**: [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
+**Prévia**: [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Exibir monitores como janelas individuais
-2. **Mobile**
+1. **Desktop** Configurações → Display → Outras opções padrão → Mostrar displays como janelas individuais
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -793,16 +826,16 @@ A opção "exibir-monitores-como-janelas-individuais" nas configurações de cad
 
 ### use-all-my-displays-for-the-remote_session
 
-Esta opção definirá a opção "usar-todos-os-meus-monitores-para-sessão-remota" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "usar todos os meus displays para a sessão remota" para cada par após a primeira conexão.
 
-A opção "usar-todos-os-meus-monitores-para-sessão-remota" nas configurações de cada par controlará então se usar todos os meus monitores para a sessão remota.
+A opção "usar todos os meus displays para a sessão remota" nas configurações de cada par controlará então se deve usar todos os meus displays para a sessão remota.
 
-**Preview**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+**Prévia**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Outras opções padrão → Usar todos os meus monitores para a sessão remota
-2. **Mobile**
+1. **Desktop** Configurações → Display → Outras opções padrão → Usar todos os meus displays para a sessão remota
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -810,14 +843,14 @@ A opção "usar-todos-os-meus-monitores-para-sessão-remota" nas configurações
 
 ### view-style
 
-Esta opção definirá a opção "estilo-de-visualização" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "estilo de visualização" para cada par após a primeira conexão.
 
-A opção "estilo-de-visualização" nas configurações de cada par controlará então o estilo de visualização.
+A opção "estilo de visualização" nas configurações de cada par controlará então o estilo de visualização.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Estilo de visualização padrão
-2. **Mobile**: Configurações → Configurações de exibição → Estilo de visualização padrão
+1. **Desktop** Configurações → Display → Estilo de visualização padrão
+2. **Móvel** Configurações → Configurações de display → Estilo de visualização padrão
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -825,14 +858,14 @@ A opção "estilo-de-visualização" nas configurações de cada par controlará
 
 ### scroll-style
 
-Esta opção definirá a opção "estilo-de-rolagem" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "estilo de rolagem" para cada par após a primeira conexão.
 
-A opção "estilo-de-rolagem" nas configurações de cada par controlará então o estilo de rolagem.
+A opção "estilo de rolagem" nas configurações de cada par controlará então o estilo de rolagem.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Estilo de rolagem padrão
-2. **Mobile**
+1. **Desktop** Configurações → Display → Estilo de rolagem padrão
+2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -840,14 +873,14 @@ A opção "estilo-de-rolagem" nas configurações de cada par controlará então
 
 ### image-quality
 
-Esta opção definirá a opção "qualidade-da-imagem" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "qualidade de imagem" para cada par após a primeira conexão.
 
-A opção "qualidade-da-imagem" nas configurações de cada par controlará então a qualidade da imagem.
+A opção "qualidade de imagem" nas configurações de cada par controlará então a qualidade da imagem.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Qualidade de imagem padrão
-2. **Mobile**: Configurações → Configurações de exibição → Qualidade de imagem padrão
+1. **Desktop** Configurações → Display → Qualidade de imagem padrão
+2. **Móvel** Configurações → Configurações de display → Qualidade de imagem padrão
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -855,14 +888,14 @@ A opção "qualidade-da-imagem" nas configurações de cada par controlará ent�
 
 ### custom-image-quality
 
-Esta opção definirá a opção "qualidade-da-imagem-personalizada" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "qualidade de imagem personalizada" para cada par após a primeira conexão.
 
-A opção "qualidade-da-imagem-personalizada" nas configurações de cada par controlará a qualidade da imagem se "qualidade-da-imagem" estiver definido como personalizado.
+A opção "qualidade de imagem personalizada" nas configurações de cada par controlará então a qualidade da imagem se "qualidade de imagem" estiver definida como personalizada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Qualidade de imagem padrão → Personalizado
-2. **Mobile**: Configurações → Configurações de exibição → Qualidade de imagem padrão → Personalizado
+1. **Desktop** Configurações → Display → Qualidade de imagem padrão → Personalizada
+2. **Móvel** Configurações → Configurações de display → Qualidade de imagem padrão → Personalizada
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -870,14 +903,14 @@ A opção "qualidade-da-imagem-personalizada" nas configurações de cada par co
 
 ### custom-fps
 
-Esta opção definirá a opção "fps-personalizado" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "fps personalizado" para cada par após a primeira conexão.
 
-A opção "fps-personalizado" nas configurações de cada par controlará o fps se "qualidade-da-imagem" estiver definido como personalizado.
+A opção "fps personalizado" nas configurações de cada par controlará então os fps se "qualidade de imagem" estiver definida como personalizada.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Qualidade de imagem padrão → Personalizado
-2. **Mobile**: Configurações → Configurações de exibição → Qualidade de imagem padrão → Personalizado
+1. **Desktop** Configurações → Display → Qualidade de imagem padrão → Personalizada
+2. **Móvel** Configurações → Configurações de display → Qualidade de imagem padrão → Personalizada
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -885,35 +918,37 @@ A opção "fps-personalizado" nas configurações de cada par controlará o fps 
 
 ### codec-preference
 
-Esta opção definirá a opção "preferência-de-codec" para todos os pares após a primeira conexão.
+Esta opção definirá a opção "preferência de codec" para cada par após a primeira conexão.
 
-A opção "preferência-de-codec" nas configurações de cada par controlará o codec para imagens.
+A opção "preferência de codec" nas configurações de cada par controlará então o codec para imagens.
 
 **Localização**:
 
-1. **Desktop**: Configurações → Exibição → Codec padrão
-2. **Mobile**: Configurações → Configurações de exibição → Codec padrão
+1. **Desktop** Configurações → Display → Codec padrão
+2. **Móvel** Configurações → Configurações de display → Codec padrão
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
-**Atenção**: Opções diferentes de "vp8" e "vp9" podem não funcionar. Isso depende do que sua máquina suporta.
+**Cuidado**: Opções diferentes de "vp8" e "vp9" podem não funcionar. Isso depende do que sua máquina suporta.
+
+## Outros
 
 ### preset-address-book-name & preset-address-book-tag
 
-Nome e tag predefinidos da lista de endereços, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
-Você pode definir somente preset-address-book-name se não quiser definir a tag.
-Use um nome e uma tag de lista de endereços válidos na página da lista de endereços do console web.
+Nome e tag de catálogo de endereços predefinidos, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Você pode definir preset-address-book-name apenas se não quiser definir tag.
+Por favor, use nome e tag de catálogo de endereços válidos na sua página de catálogo de endereços do console web.
 
 | Opção | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: | :------: |
-| preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
-| preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
+| preset-address-book-name | N | | | `preset-address-book-name=<nome do catálogo de endereços>` |
+| preset-address-book-tag | N | | | `preset-address-book-tag=<nome da tag do catálogo de endereços>` |
 
 ### disable-group-panel
 
-Desabilita o painel de grupo (ao lado do painel da lista de endereços) no cliente RustDesk, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
+Desabilita painel de grupo (ao lado do painel de catálogo de endereços, é nomeado "Dispositivos acessíveis" desde 1.3.8) no cliente RustDesk, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
 
 | Opção | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: | :------: |
@@ -921,7 +956,7 @@ Desabilita o painel de grupo (ao lado do painel da lista de endereços) no clien
 
 ### pre-elevate-service
 
-Elevação automática na execução para Windows portátil, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
+Elevação automática na execução para Windows portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
 
 | Opção | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: | :------: |
@@ -929,7 +964,7 @@ Elevação automática na execução para Windows portátil, https://github.com/
 
 ### disable-floating-window
 
-Quando o serviço do Android inicia, ele exibe uma janela flutuante, o que ajuda a impedir que o sistema finalize o serviço RustDesk.
+Quando o serviço Android inicia, ele exibirá uma janela flutuante, o que ajuda a prevenir que o sistema mate o serviço RustDesk.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -937,7 +972,7 @@ Quando o serviço do Android inicia, ele exibe uma janela flutuante, o que ajuda
 
 ### floating-window-size
 
-Quando o serviço do Android inicia, ele exibe uma janela flutuante, o que ajuda a impedir que o sistema finalize o serviço RustDesk. Quando o tamanho for menor que 120, a janela flutuante será difícil de clicar. Um tamanho muito pequeno pode não ser capaz de manter o serviço em segundo plano em alguns dispositivos.
+Quando o serviço Android inicia, ele exibirá uma janela flutuante, o que ajuda a prevenir que o sistema mate o serviço RustDesk. Quando o tamanho é menor que 120, a janela flutuante será difícil de clicar. Um tamanho muito pequeno pode não conseguir manter o serviço em segundo plano em alguns dispositivos.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -945,7 +980,7 @@ Quando o serviço do Android inicia, ele exibe uma janela flutuante, o que ajuda
 
 ### floating-window-untouchable
 
-Por padrão, clicar na janela flutuante abrirá um menu. Depois de defini-lo como "intocavel", clicar ou deslizar passará pela janela flutuante e será transmitido para a janela subjacente. Depois de ser definida como "intocavel", a posição da janela flutuante não pode ser alterada e o sistema pode definir automaticamente a janela flutuante para ser semi-transparente. No entanto, esse recurso pode não funcionar em um pequeno número de aplicativos, como o aplicativo GitHub.
+Por padrão, clicar na janela flutuante fará aparecer um menu. Após defini-la como 'intocável', clicar ou deslizar passará pela janela flutuante e será transmitido para a janela subjacente. Após ser definida como 'intocável', a posição da janela flutuante não pode ser alterada, e o sistema pode automaticamente definir a janela flutuante como semi-transparente. No entanto, este recurso pode não funcionar em um pequeno número de aplicações, como o app GitHub.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -953,7 +988,7 @@ Por padrão, clicar na janela flutuante abrirá um menu. Depois de defini-lo com
 
 ### floating-window-transparency
 
-As janelas flutuantes do Android têm transparência ajustável. Se você deseja habilitar, mas ocultar a janela flutuante, você pode definir a transparência para 0, a janela flutuante será automaticamente definida como "intocavel" para passar pelos eventos de clique.
+Janelas flutuantes Android têm transparência ajustável. Se você quiser habilitar mas ocultar a janela flutuante, pode definir a transparência para 0, a janela flutuante será automaticamente definida como 'intocável' para passar eventos de clique.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -961,16 +996,16 @@ As janelas flutuantes do Android têm transparência ajustável. Se você deseja
 
 ### floating-window-svg
 
-Se um ícone não for definido para a janela flutuante do Android, o padrão será exibir o ícone do RustDesk.
-Ao definir, escreva o conteúdo do texto do SVG em uma linha e preste atenção às [limitações de suporte do SVG](https://bigbadaboom.github.io/androidsvg/index.html).
+Se nenhum ícone for definido para a janela flutuante Android, ela exibirá por padrão o ícone RustDesk.
+Ao definir, por favor escreva o conteúdo de texto SVG em uma linha, e preste atenção às [limitações de suporte SVG](https://bigbadaboom.github.io/androidsvg/index.html).
 
 | Padrão | Exemplo |
 | :------: | :------: |
-| RustDesk icon | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
+| Ícone RustDesk | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
 
 ### keep-screen-on
 
-Esta opção é para o lado controlado do Android. Observe que manter a tela ligada depende da janela flutuante.
+Isto é para o lado controlado Android. Note que manter a tela ligada depende da janela flutuante.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -978,7 +1013,7 @@ Esta opção é para o lado controlado do Android. Observe que manter a tela lig
 
 ### enable-directx-capture
 
-Esta opção é para o lado controlado do Windows. Se você não encontrar nenhum problema, é recomendável usar as configurações padrão, que priorizam o uso do DirectX para capturas de tela em vez de usar o GDI diretamente.
+Isto é para o lado controlado Windows. Se você não encontrar problemas, é recomendado usar as configurações padrão, que priorizam usar DirectX para capturas de tela em vez de usar GDI diretamente.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -986,7 +1021,7 @@ Esta opção é para o lado controlado do Windows. Se você não encontrar nenhu
 
 ### enable-android-software-encoding-half-scale
 
-Esta opção é para o lado controlado do Android. Por padrão, quando a resolução é maior que 1200, a codificação por hardware usa a resolução original, enquanto a codificação por software usa metade da resolução, pois a codificação por software é mais lenta. Esta opção é usada para definir se a codificação por software deve ser dimensionada para metade da resolução.
+Isto é para o lado controlado Android. Por padrão, quando a resolução é maior que 1200, codificação por hardware usa a resolução original, enquanto codificação por software usa metade da resolução, já que codificação por software é mais lenta. Esta opção é usada para definir se a codificação por software deve ser dimensionada para metade da resolução.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -994,7 +1029,7 @@ Esta opção é para o lado controlado do Android. Por padrão, quando a resolu�
 
 ### allow-remote-cm-modification
 
-Controla se permite que o lado de controle clique na janela de gerenciamento de conexão para aceitar conexões, alterar permissões etc.
+Controla se deve permitir que o lado de controle clique na janela de gerenciamento de conexão para aceitar conexões, alterar permissões, etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
@@ -1004,7 +1039,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 ### remove-preset-password-warning
 
-Controla se deve remover o aviso de segurança na GUI quando houver uma senha predefinida no cliente personalizado.
+Controla se deve remover o aviso de segurança na GUI quando há senha predefinida no cliente personalizado.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 
@@ -1014,9 +1049,9 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
-Controla se deseja ocultar algumas configurações. Certifique-se de que "Desativar configurações" esteja desativado, caso contrário, elas não funcionarão.
+Controla se deve ocultar algumas configurações. Por favor, certifique-se de que `Desabilitar configurações` esteja desligado, caso contrário estas não funcionarão.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/263
 
@@ -1028,7 +1063,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 
 ### hide-username-on-card
 
-Controla se deseja mostrar o nome de usuário na lista de dispositivos. Porque às vezes, o nome de usuário é muito longo e oculta as outras informações.
+Controla se deve mostrar nome de usuário na lista de dispositivos. Porque às vezes, o nome de usuário é muito longo, ocultará as outras informações.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
 
@@ -1038,7 +1073,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-22165214
 
 ### hide-help-cards
 
-Controla se deseja mostrar avisos de UAC / permissão na GUI.
+Controla se deve mostrar avisos UAC / permissão na GUI.
 
 https://github.com/rustdesk/rustdesk/issues/8687
 
@@ -1048,13 +1083,13 @@ https://github.com/rustdesk/rustdesk/issues/8687
 
 ### display-name
 
-Altere seu nome de exibição que será mostrado no pop-up quando você se conectar a um dispositivo remoto. Por padrão, ele exibe o nome de usuário do seu sistema operacional.
+Altere seu nome de exibição que será mostrado no popup quando você se conectar ao dispositivo remoto. Por padrão, exibe primeiro o nome do usuário logado, caso contrário exibe seu nome de usuário do SO.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/277
 
 ### disable-udp
 
-Controla se deseja usar apenas TCP. Não usará mais UDP 21116, TCP 21116 será usado.
+Controla se deve usar apenas TCP. Não usará mais UDP 21116, TCP 21116 será usado no lugar.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
@@ -1062,21 +1097,21 @@ Controla se deseja usar apenas TCP. Não usará mais UDP 21116, TCP 21116 será 
 
 ### preset-user-name / preset-strategy-name / preset-device-group-name
 
-Atribuir usuário/estratégia/grupo de dispositivos aos dispositivos. Você também pode fazer isso via [linha de comando](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Atribui usuário / estratégia / grupo de dispositivo ao dispositivo. Você também pode fazer isso via [linha de comando](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
-grupo de dispositivos está disponível no cliente RustDesk >=1.3.8, pro >= 1.5.0
+grupo de dispositivo está disponível no cliente RustDesk >=1.3.8, pro >= 1.5.0
 
 ### default-connect-password
 
-Senha padrão usada para conectar a dispositivos remotos, esta senha tem prioridade inferior à senha da lista de endereços e à senha salva localmente.
+Você usa a `senha de conexão padrão` para estabelecer conexões com dispositivos remotos. Esta senha é configurada no lado de controle e não deve ser confundida com qualquer [senha predefinida](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) encontrada no cliente controlado (apenas entrada).
 
-Exemplo: `senha-de-conexão-padrão=abcd1234`
+ex. `default-connect-password=abcd1234`
 
 ### enable-trusted-devices
 
-Permitir que dispositivos confiáveis ignorem a verificação 2FA.
+Permite que dispositivos confiáveis pulem verificação 2FA.
 
 https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 
@@ -1084,10 +1119,59 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-trusted-devices=N` |
 
+### hide-tray
+
+Desabilita o ícone da bandeja na bandeja do sistema.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/332
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-tray=Y` |
+
+### one-way-clipboard-redirection
+
+Desabilita sincronização de área de transferência do lado controlado para o lado de controle, disponível no cliente RustDesk >=1.3.1 (lado controlado)
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-clipboard-redirection=Y` |
+
+### one-way-file-transfer
+
+Desabilita transferência de arquivo do lado controlado para o lado de controle, disponível no cliente RustDesk >=1.3.1 (lado controlado)
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-file-transfer=Y` |
+
+### sync-init-clipboard
+
+Se sincronizar área de transferência inicial ao estabelecer conexão (apenas do lado de controle para o lado controlado), disponível no cliente RustDesk >=1.3.1 (lado de controle)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `sync-init-clipboard=Y` |
+
+### allow-logon-screen-password
+
+Se permitir entrada de senha na tela de logon quando [modo de aprovação apenas clique](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) for usado, disponível no cliente RustDesk >=1.3.1 (lado controlado)
+
+https://github.com/rustdesk/rustdesk/discussions/9269
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-logon-screen-password=Y` |
 
 ### allow-https-21114
 
-Normalmente, o HTTPS usa a porta 443. Quando a porta do servidor de API é definida erroneamente como 21114, a ação padrão será remover a configuração da porta 21114. Definir a opção como Y permite o uso de 21114 como a porta HTTPS. Disponível no cliente RustDesk >=1.3.9.
+Tipicamente, HTTPS usa porta 443. Quando a porta do servidor API está incorretamente definida para 21114, o cliente RustDesk removerá por padrão a configuração da porta 21114. Definir a opção para Y permite o uso de 21114 como porta HTTPS. Disponível no cliente RustDesk >=1.3.9.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
@@ -1097,8 +1181,60 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
 ### allow-d3d-render
 
-A renderização D3D pode obter FPS mais alto e reduzir o uso da CPU, mas a tela de controle remoto pode ficar preta em alguns dispositivos. Disponível apenas no cliente RustDesk >=1.3.9, somente para Windows.
+Renderização D3D pode obter FPS alto e reduzir o uso de cpu, mas a tela de controle remoto pode ficar preta em alguns dispositivos. Disponível no cliente RustDesk >=1.3.9, apenas windows.
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
+
+### allow-hostname-as-id
+
+[Usar hostname como id](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), espaços no hostname são substituídos por '-'. Isso não é 100% garantido e só ocorre na primeira vez que o cliente RustDesk é executado (ou seja, em um cliente recém-instalado); se um conflito ocorrer, um ID aleatório será atribuído.
+
+Disponível no cliente RustDesk versão 1.4.0 e posterior.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-hostname-as-id=Y` |
+
+### allow-websocket
+
+Usar protocolo WebSocket para conectar servidor e cliente. Disponível apenas no cliente RustDesk >=1.4.0 e servidor Pro >= 1.5.7. Note que WebSocket apenas suporta conexão relay.
+
+Para fazer WebSocket funcionar, você precisa configurar seu proxy reverso corretamente, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+Esta opção habilita ou desabilita o uso de senhas de uso único apenas numéricas.
+Disponível apenas no cliente RustDesk >=1.4.1 e servidor Pro >= 1.5.9.
+
+**Discussão**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**Prévia**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
+### register-device
+
+Não registrar o dispositivo, você não o verá na página de dispositivos no console web.
+
+**Disponível apenas no servidor Pro >= 1.6.0 e requer [licença custom2](https://rustdesk.com/pricing#custom2) e número de conexões simultâneas >= 2.**
+
+Se `register-device=N`, o seguinte não funcionará para este dispositivo.
+- Login
+- Comando `--assign`
+- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- Logs de Auditoria
+- Estratégia
+
+**Discussão**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 e https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `register-device=N` |

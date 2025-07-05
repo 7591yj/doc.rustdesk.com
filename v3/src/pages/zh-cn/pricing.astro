@@ -5,6 +5,8 @@ import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+//import { Image } from 'astro:assets';
+//import wxImage from '~/assets/images/wx.png';
 
 const metadata = {
   title: '定价',
@@ -159,6 +161,10 @@ const metadata = {
             description:
               '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">自定义客户端生成器</a>',
           },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-make-rustdesk-work-properly-in-restricted-network-with-80443-only">WebSocket</a>',
+          },
         ],
         callToAction: {
           text: '立即购买',
@@ -176,6 +182,9 @@ const metadata = {
           {
             description: '<span class="font-bold text-red-500">基础计划中的所有内容</span>',
             icon: 'tabler:checks',
+          },
+            {
+            description: '自托管 Web 客户端（需要 $39.90/月 或更高计划）',
           },
           {
             description: '每增加一个用户 $1',
@@ -253,6 +262,14 @@ const metadata = {
       },
     ]}
   />
+  <!-- 
+  <CallToAction>
+    <Fragment slot="title">联系我们获取更大的计划和咨询</Fragment>
+    <Fragment slot="subtitle">
+      <Image src={wxImage} alt="微信二维码" class="mx-auto mt-4" width={128} height={128} />
+    </Fragment>
+  </CallToAction>
+  -->
 
   <CallToAction
     actions={[

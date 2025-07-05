@@ -70,6 +70,32 @@ Enable file copy and paste or file transfer (session) for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-file-transfer=Y` |
 
+
+### enable-camera
+
+Enable camera for incoming connections.
+
+**Location**:
+
+1. **Desktop** Settings → Security → Permissions → Enable camera
+2. **Mobile**
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-camera=Y` |
+
+### enable-remote-printer
+
+Enable remote printer for incoming connections.
+
+**Location**:
+
+1. **Windows** Settings → Security → Permissions → Enable remote printer
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-remote-printer=Y` |
+
 ### enable-audio
 
 Enable audio record and transfer to peer.
@@ -908,6 +934,8 @@ The "codec-preference" option in each peer's settings will then control codec fo
 
 **Caution**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
 
+## Others
+
 ### preset-address-book-name & preset-address-book-tag
 
 Preset address book name and tag, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
@@ -1022,7 +1050,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
 Controls whether to hide some settings. Please ensure `Disable settings` is turned off, otherwise these won't work.
 
@@ -1078,7 +1106,7 @@ device group is available in RustDesk client >=1.3.8, pro >= 1.5.0
 
 ### default-connect-password
 
-Default password used to connect to remote devices, this password has lower priority than address book password and local saved password.
+You use the `default connection password` to establish connections to remote devices. This password is configured on the controlling side and should not be confused with any [preset password](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) found on the controlled (incoming-only) client.
 
 e.g. `default-connect-password=abcd1234`
 
@@ -1145,7 +1173,7 @@ https://github.com/rustdesk/rustdesk/discussions/9269
 
 ### allow-https-21114
 
-Typically, HTTPS uses port 443. When the API server's port is mistakenly set to 21114, the default action will be to remove the 21114 port setting. Setting the option to Y allows the use of 21114 as the HTTPS port. Available in RustDesk client >=1.3.9.
+Typically, HTTPS uses port 443. When the API server's port is mistakenly set to 21114, RustDesk client will remove the 21114 port setting by default. Setting the option to Y allows the use of 21114 as the HTTPS port. Available in RustDesk client >=1.3.9.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
@@ -1160,3 +1188,57 @@ D3D render can get high FPS and reduce the cpu usage, but the remote control scr
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
+
+
+### allow-hostname-as-id
+
+[Use hostname as id](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), spaces in the hostname are replaced with '-'. This is not 100% guaranteed and only occurs the first time the RustDesk client is run (i.e., on a newly installed client); if a conflict occurs, a random ID will be assigned. 
+
+Available in RustDesk client version 1.4.0 and later. 
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-hostname-as-id=Y` |
+
+### allow-websocket
+
+Use WebSocket protocol to connect server and client. Only available in RustDesk client >=1.4.0 and Pro server >= 1.5.7. Note that WebSocket only supports relay connection.
+
+To make WebSocket work, you need to configure your reverse proxy correctly, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+This option enables or disables the use of numeric-only one-time passwords.
+Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**Preview**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
+### register-device
+
+Do not register the device, you will not see it in the devices page on web console. 
+
+**Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.**
+
+If `register-device=N`, below will not work for this device.
+- Log in
+- `--assign` command
+- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- Audit Logs
+- Strategy
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `register-device=N` |
+

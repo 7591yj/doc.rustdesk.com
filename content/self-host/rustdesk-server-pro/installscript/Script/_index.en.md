@@ -9,7 +9,7 @@ Don't forget to get your license from [https://rustdesk.com/pricing/](https://ru
 Please read [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/) first before doing this simple install. You can know more underlying details there.
 {{% /notice %}}
 
-### Install
+## Install
 
 Copy and paste the above command into your Linux terminal to install RustDesk Server Pro.
 
@@ -17,6 +17,8 @@ Copy and paste the above command into your Linux terminal to install RustDesk Se
 
 {{% notice note %}}
 I recommend using [the Docker image](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose); it greatly simplifies the process of deploying the solution as well as updating it. The resource consumption is very low.
+
+And please run above under your home directory rather than a diretory you have no write permission.
 {{% /notice %}}
 
 What it does:
@@ -41,7 +43,7 @@ If the systemd service fails to start, it is probably related to SELinux, please
 If your client cannot connect to your server or you cannot access the web console, please check [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall).
 {{% /notice %}}
 
-### Upgrade
+## Upgrade
 
 Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro installation, this could also be saved locally and scheduled with cron.
 
@@ -49,6 +51,8 @@ Copy and paste the above command into your Linux terminal to upgrade your existi
 
 {{% notice note %}}
 If you encounter issues with this script, I would suggest you go through the script and execute the steps manually, one by one.
+
+And please run above under your home directory rather than a diretory you have no write permission.
 {{% /notice %}}
 
 What it does:
@@ -56,7 +60,7 @@ What it does:
 - Checks for new versions of RustDesk Server Pro
 - If it finds a new version, it removes the API files and downloads new executables and API files
 
-### Convert from open source
+## Convert from open source
 
 Copy and paste the above command into your Linux terminal to convert from RustDesk Server to RustDesk Server Pro.
 

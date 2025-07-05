@@ -3,24 +3,26 @@ title: Erweiterte Einstellungen
 weight: 49
 ---
 
+Alle erweiterten Einstellungen in benutzerdefinierten Clients werden hier behandelt.
+
 ## Berechtigungsebenen für Einstellungen
 
 Es gibt vier Arten von Einstellungen:
 
-1. Einstellungen überschreiben in "Web Console → Custom Clients"
-2. Standardeinstellungen in "Web Console → Custom Clients"
-3. Benutzereinstellungen im RustDesk-Client
-4. Strategy-Einstellungen in "Web Console → Strategies"
+1. Überschreibungseinstellungen, in `Web Console` → `Custom Clients`
+2. Standardeinstellungen, in `Web Console` → `Custom Clients`
+3. Benutzereinstellungen, im RustDesk-Client
+4. Strategieeinstellungen, in `Web Console` → `Strategies`
 
-Die Berechtigungshierarchie für diese Einstellungen ist wie folgt: `Überschreiben > Strategy > Benutzer > Standard`.
+Die Hierarchie der Berechtigung für diese Einstellungen ist wie folgt: `Überschreibung > Strategie > Benutzer > Standard`.
 
 ## Sicherheitseinstellungen
 
 ### access-mode
 
-Legt den Zugriffsmodus (Berechtigungen) für eingehende Verbindungen fest.
+Setzt den Zugriffsmodus (Berechtigungen) für eingehende Verbindungen.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Berechtigungen
 2. **Mobil**
@@ -31,11 +33,11 @@ Legt den Zugriffsmodus (Berechtigungen) für eingehende Verbindungen fest.
 
 ### enable-keyboard
 
-Aktiviert die Tastatur-/Mauseingabe für eingehende Verbindungen.
+Aktiviert Tastatur-/Maus-Eingabe für eingehende Verbindungen.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Tastatur und Maus aktivieren
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Tastatur aktivieren
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -44,9 +46,9 @@ Aktiviert die Tastatur-/Mauseingabe für eingehende Verbindungen.
 
 ### enable-clipboard
 
-Aktiviert das Kopieren und Einfügen für eingehende Verbindungen.
+Aktiviert Kopieren und Einfügen für eingehende Verbindungen.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Zwischenablage aktivieren
 2. **Mobil**
@@ -57,22 +59,47 @@ Aktiviert das Kopieren und Einfügen für eingehende Verbindungen.
 
 ### enable-file-transfer
 
-Aktiviert das Kopieren und Einfügen von Dateien oder die Dateiübertragung (Sitzung) für eingehende Verbindungen.
+Aktiviert Dateikopieren und -einfügen oder Dateiübertragung (Sitzung) für eingehende Verbindungen.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Datenübertragung aktivieren
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Dateiübertragung aktivieren
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-file-transfer=Y` |
 
+### enable-camera
+
+Aktiviert Kamera für eingehende Verbindungen.
+
+**Ort**:
+
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Kamera aktivieren
+2. **Mobil**
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-camera=Y` |
+
+### enable-remote-printer
+
+Aktiviert Remote-Drucker für eingehende Verbindungen.
+
+**Ort**:
+
+1. **Windows** Einstellungen → Sicherheit → Berechtigungen → Remote-Drucker aktivieren
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-remote-printer=Y` |
+
 ### enable-audio
 
-Aktiviert die Audioaufzeichnung und die Übertragung zur Gegenstelle.
+Aktiviert Audioaufzeichnung und -übertragung zum Peer.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Audio aktivieren
 2. **Mobil**
@@ -83,11 +110,11 @@ Aktiviert die Audioaufzeichnung und die Übertragung zur Gegenstelle.
 
 ### enable-tunnel
 
-Aktiviert die TCP-Tunnelung.
+Aktiviert TCP-Tunneling.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → TCP-Tunnelung aktivieren
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → TCP-Tunneling aktivieren
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -96,11 +123,11 @@ Aktiviert die TCP-Tunnelung.
 
 ### enable-remote-restart
 
-Aktiviert den Neustart durch die kontrollierende Seite.
+Aktiviert Neustart durch die Steuerungsseite.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Entfernten Neustart aktivieren
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Remote-Neustart aktivieren
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -109,12 +136,12 @@ Aktiviert den Neustart durch die kontrollierende Seite.
 
 ### enable-record-session
 
-Aktiviert die Aufzeichnung von Sitzungen.
+Ermöglicht das Aufzeichnen von Sitzungen.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Sitzungsaufzeichnung aktivieren
-2. **Mobil** Einstellungen → Bildschirm freigeben → Sitzungsaufzeichnung aktivieren
+2. **Mobil** Einstellungen → Bildschirm teilen → Sitzungsaufzeichnung aktivieren
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -122,11 +149,11 @@ Aktiviert die Aufzeichnung von Sitzungen.
 
 ### enable-block-input
 
-Aktiviert auf der kontrollierende Seite die Möglichkeit, die Eingaben anderer Benutzer zu blockieren.
+Ermöglicht der Steuerungsseite, die Eingabe anderer Benutzer zu blockieren.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Blockieren von Benutzereingaben aktivieren (nur Windows)
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Benutzereingabe blockieren aktivieren (nur Windows)
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -135,27 +162,27 @@ Aktiviert auf der kontrollierende Seite die Möglichkeit, die Eingaben anderer B
 
 ### allow-remote-config-modification
 
-Erlaubt der kontrollierenden Seite, die Einstellungen in der kontrollierten RustDesk-Benutzeroberfläche zu ändern.
+Erlaubt der Steuerungsseite, die Einstellungen in der gesteuerten RustDesk-Benutzeroberfläche zu ändern.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Änderung der Konfiguration aus der Ferne zulassen
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Remote-Konfigurationsänderung aktivieren
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | Y | `allow-remote-config-modification=Y` |
+| N | Y, N | N | `allow-remote-config-modification=Y` |
 
 ### enable-lan-discovery
 
-Ermöglicht es der LAN-Gegenstelle, mich zu entdecken.
+Erlaubt LAN-Peers, mich zu entdecken.
 
-Nach der LAN-Erkennung kann [WOL](https://de.wikipedia.org/wiki/Wake_On_LAN) funktionieren, wenn es lokal unterstützt wird.
+Nach der LAN-Erkennung kann [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) funktionieren, wenn es lokal unterstützt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Sicherheit → LAN-Erkennung verbieten
-2. **Mobil** Einstellungen → Bildschirm freigeben → LAN-Erkennung verbieten
+1. **Desktop** Einstellungen → Sicherheit → Sicherheit → LAN-Erkennung verweigern
+2. **Mobil** Einstellungen → Bildschirm teilen → LAN-Erkennung verweigern
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -163,12 +190,12 @@ Nach der LAN-Erkennung kann [WOL](https://de.wikipedia.org/wiki/Wake_On_LAN) fun
 
 ### direct-server
 
-Aktiviert den direkten IP-Zugang.
+Aktiviert direkten IP-Zugriff.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Sicherheit → Direkten IP-Zugriff aktivieren
-2. **Mobil** Einstellungen → Bildschirm freigeben → Direkter IP-Zugang
+2. **Mobil** Einstellungen → Bildschirm teilen → Direkter IP-Zugriff
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -176,12 +203,12 @@ Aktiviert den direkten IP-Zugang.
 
 ### direct-access-port
 
-Direkter IP-Zugangsport.
+Port für direkten IP-Zugriff.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Sicherheit → Direkten IP-Zugriff aktivieren → Port (wird nur angezeigt, wenn "Direkten IP-Zugriff aktivieren" verwendet wird)
-2. **Mobil** Einstellungen → Bildschirm freigeben → Direkter IP-Zugang
+1. **Desktop** Einstellungen → Sicherheit → Sicherheit → Port für direkten IP-Zugriff (Anzeigen wenn "Direkten IP-Zugriff aktivieren" aktiviert ist)
+2. **Mobil** Einstellungen → Bildschirm teilen → Direkter IP-Zugriff
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -189,12 +216,12 @@ Direkter IP-Zugangsport.
 
 ### whitelist
 
-Verwendet eine IP-Whitelist.
+IP-Whitelist verwenden.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Sicherheit → IP-Whitelist verwenden
-2. **Mobil** Einstellungen → Bildschirm freigeben → IP-Whitelist verwenden
+2. **Mobil** Einstellungen → Bildschirm teilen → IP-Whitelist verwenden
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -202,12 +229,12 @@ Verwendet eine IP-Whitelist.
 
 ### allow-auto-disconnect & auto-disconnect-timeout
 
-Schließt eingehende Sitzungen automatisch nach einer gewissen Zeit der Inaktivität des Benutzers.
+Eingehende Sitzungen nach einer Zeit der Benutzerinaktivität automatisch schließen.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Sicherheit → Automatisches Schließen eingehender Sitzungen bei Inaktivität des Benutzers
-2. **Mobil** Einstellungen → Bildschirm freigeben → Automatisches Schließen eingehender Sitzungen bei Inaktivität des Benutzers
+1. **Desktop** Einstellungen → Sicherheit → Sicherheit → Eingehende Sitzungen bei Benutzerinaktivität automatisch schließen
+2. **Mobil** Einstellungen → Bildschirm teilen → Eingehende Sitzungen bei Benutzerinaktivität automatisch schließen
 
 | Option | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: | :------: |
@@ -216,9 +243,9 @@ Schließt eingehende Sitzungen automatisch nach einer gewissen Zeit der Inaktivi
 
 ### allow-only-conn-window-open
 
-Lässt die Verbindung nur zu, wenn das RustDesk-Fenster geöffnet ist.
+Verbindung nur zulassen, wenn das RustDesk-Fenster geöffnet ist.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Sicherheit → Sicherheit → Verbindung nur zulassen, wenn das RustDesk-Fenster geöffnet ist
 2. **Mobil**
@@ -229,41 +256,49 @@ Lässt die Verbindung nur zu, wenn das RustDesk-Fenster geöffnet ist.
 
 ### approve-mode
 
-Akzeptiert eingehende Verbindungen mittels Passwort oder durch manuelles Anklicken.
+Eingehende Verbindungen über Passwort oder manuellen Klick akzeptieren.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Sicherheit → Passwort → Drop-down-Box
-2. **Mobil** Bildschirm freigeben → Drop-down-Menü in der rechten oberen Ecke
+1. **Desktop** Einstellungen → Sicherheit → Passwort → Dropdown-Box
+2. **Mobil** Bildschirm teilen → Dropdown-Menü oben rechts
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | password, click, password-click | password-click | `approve-mode=password-click` |
 
+### verification-method
+
+Welche Art von Passwort verwendet werden kann, `temporäres Passwort` bezieht sich auf das einmalige Zufallspasswort.
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
 ### proxy-url
 
 Die Proxy-URL.
 
-Unterstützt derzeit `HTTP` und `SOCKS5`.
+Unterstützt derzeit `http` und `socks5`.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Netzwerk → Proxy → SOCKS5/HTTP(S)-Proxy
+1. **Desktop** Einstellungen → Netzwerk → Proxy → Socks5/Http(s)-Proxy
 2. **Mobil**
 
 Beispiele:
 
-1. **HTTP** `proxy-url=http://192.168.0.2:12345`
-2. **HTTPS** `proxy-url=https://192.168.0.2:12345`
-3. **SOCKS5** `proxy-url=socks5://192.168.0.2:1080`
+1. **http** `proxy-url=http://192.168.0.2:12345`
+2. **https** `proxy-url=https://192.168.0.2:12345`
+3. **socks5** `proxy-url=socks5://192.168.0.2:1080`
 
 ### proxy-username & proxy-password
 
 Proxy-Benutzername und -Passwort.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Netzwerk → Proxy → SOCKS5/HTTP(S)-Proxy
+1. **Desktop** Einstellungen → Netzwerk → Proxy → Socks5/Http(s)-Proxy
 2. **Mobil**
 
 | Option | Installation erforderlich | Werte | Standard | Beispiel |
@@ -275,12 +310,12 @@ Proxy-Benutzername und -Passwort.
 
 ### theme
 
-Steuert die Farbgebung der Benutzeroberfläche des RustDesk-Clients.
+Steuert das UI-Theme des RustDesk-Clients.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Farbgebung
-2. **Mobil** Einstellungen → Einstellungen → Dunkle Farbgebung
+1. **Desktop** Einstellungen → Allgemein → Theme
+2. **Mobil** Einstellungen → Einstellungen → Theme
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -290,7 +325,7 @@ Steuert die Farbgebung der Benutzeroberfläche des RustDesk-Clients.
 
 Steuert die Sprache des RustDesk-Clients.
 
-**Position**:
+**Ort**:
 
 1. **Desktop** Einstellungen → Allgemein → Sprache
 2. **Mobil** Einstellungen → Einstellungen → Sprache
@@ -299,20 +334,20 @@ Steuert die Sprache des RustDesk-Clients.
 | :------: | :------: | :------: | :------: |
 | N | default, ar, bg, ... | default | `lang=default` |
 
-Derzeit sind folgende Sprachen verfügbar:
+Derzeit verfügbare Sprachen sind:
 
 ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
 
-Die aktuelle Sprachliste finden Sie im Code unter [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45).
+Sie können [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) im Code für die neueste Sprachliste überprüfen.
 
 ### allow-auto-record-incoming
 
 Eingehende Sitzungen automatisch aufzeichnen.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Aufnahme → Eingehende Sitzungen automatisch aufzeichnen
-2. **Mobil** Einstellungen → Aufnahme → Eingehende Sitzungen automatisch aufzeichnen
+1. **Desktop** Einstellungen → Allgemein → Aufzeichnung → Eingehende Sitzungen automatisch aufzeichnen
+2. **Mobil** Einstellungen → Aufzeichnung → Eingehende Sitzungen automatisch aufzeichnen
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -322,10 +357,10 @@ Eingehende Sitzungen automatisch aufzeichnen.
 
 Ausgehende Sitzungen automatisch aufzeichnen.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Aufnahme → Ausgehende Sitzungen automatisch aufzeichnen
-2. **Mobil** Einstellungen → Aufnahme → Ausgehende Sitzungen automatisch aufzeichnen
+1. **Desktop** Einstellungen → Allgemein → Aufzeichnung → Ausgehende Sitzungen automatisch aufzeichnen
+2. **Mobil** Einstellungen → Aufzeichnung → Ausgehende Sitzungen automatisch aufzeichnen
 
 | Installation erforderlich | Werte | Standard | Beispiel | Version |
 | :------: | :------: | :------: | :------: | :------: |
@@ -333,12 +368,12 @@ Ausgehende Sitzungen automatisch aufzeichnen.
 
 ### video-save-directory
 
-Das Verzeichnis zum Speichern der aufgenommenen Videos.
+Das Verzeichnis zum Speichern aufgezeichneter Videos.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Aufnahme → Ausgehend
-2. **Mobil** Einstellungen → Aufnahme
+1. **Desktop** Einstellungen → Allgemein → Aufzeichnung → Video-Speicherverzeichnis
+2. **Mobil** Einstellungen → Aufzeichnung
 
 Standardwerte:
 
@@ -347,15 +382,15 @@ Standardwerte:
 3. **Windows** %USERPROFILE%\Videos\\**app_name**
 4. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
 
-**Hinweis**: Ersetzen Sie **app_name** durch den Namen der aktuellen Anwendung.
+**Hinweis**: Ersetzen Sie **app_name** durch den aktuellen App-Namen.
 
 ### enable-confirm-closing-tabs
 
-Legt fest, ob vor dem Schließen aller entfernten Registerkarten ein Bestätigungsdialog angezeigt werden soll.
+Steuert, ob ein Bestätigungsdialog vor dem Schließen aller Remote-Tabs angezeigt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Weitere Einstellungen → Nachfragen, wenn mehrere Tabs geschlossen werden
+1. **Desktop** Einstellungen → Allgemein → Sonstiges → Vor dem Schließen mehrerer Tabs bestätigen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -364,12 +399,12 @@ Legt fest, ob vor dem Schließen aller entfernten Registerkarten ein Bestätigun
 
 ### enable-abr
 
-Aktiviert die adaptive Bitrate.
+Adaptive Bitrate aktivieren.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Weitere Einstellungen → Bitrate automatisch anpassen
-2. **Mobil** Einstellungen → Bildschirm freigeben → Bitrate automatisch anpassen (beta)
+1. **Desktop** Einstellungen → Allgemein → Sonstiges → Adaptive Bitrate
+2. **Mobil** Einstellungen → Bildschirm teilen → Adaptive Bitrate (Beta)
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -377,11 +412,11 @@ Aktiviert die adaptive Bitrate.
 
 ### allow-remove-wallpaper
 
-Entfernt das Hintergrundbild bei eingehenden Sitzungen.
+Hintergrundbild während eingehender Sitzungen entfernen.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Weitere Einstellungen → Hintergrundbild während eingehender Sitzungen entfernen
+1. **Desktop** Einstellungen → Allgemein → Sonstiges → Hintergrundbild während eingehender Sitzungen entfernen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -390,11 +425,11 @@ Entfernt das Hintergrundbild bei eingehenden Sitzungen.
 
 ### enable-open-new-connections-in-tabs
 
-Steuert, ob eine neue Registerkarte oder ein neues Fenster zum Öffnen einer neuen Verbindung verwendet werden soll.
+Steuert, ob ein neuer Tab oder ein neues Fenster zum Öffnen einer neuen Verbindung verwendet wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Weitere Einstellungen → Verbindung in neuem Tab öffnen
+1. **Desktop** Einstellungen → Allgemein → Sonstiges → Verbindung in neuem Tab öffnen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -403,11 +438,11 @@ Steuert, ob eine neue Registerkarte oder ein neues Fenster zum Öffnen einer neu
 
 ### allow-always-software-render
 
-Verwendet immer Software-Rendering.
+Immer Software-Rendering verwenden.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Weitere Einstellungen → Software-Rendering immer verwenden
+1. **Desktop** Einstellungen → Allgemein → Sonstiges → Immer Software-Rendering verwenden
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -416,13 +451,13 @@ Verwendet immer Software-Rendering.
 
 ### allow-linux-headless
 
-Lässt eingehende Verbindungen zu, wenn keine Bildschirme vorhanden sind.
+Eingehende Verbindung zulassen, wenn keine Displays vorhanden sind.
 
-Diese Option erfordert Desktop-Umgebung, Xorg-Server und GDM, siehe [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
+Diese Option erfordert eine Desktop-Umgebung, Xorg-Server und GDM, siehe [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Allgemein → Weitere Einstellungen → Erlaubt Linux ohne Bildschirm
+1. **Desktop** Einstellungen → Allgemein → Sonstiges → Linux headless zulassen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -431,9 +466,9 @@ Diese Option erfordert Desktop-Umgebung, Xorg-Server und GDM, siehe [PR 3902](ht
 
 ### enable-hwcodec
 
-Aktiviert den Hardware-Codec, um das Bild flüssiger zu machen.
+Hardware-Kodierung aktivieren, um das Bild flüssiger zu machen.
 
-**Position**:
+**Ort**:
 
 1. **Desktop**
 2. **Mobil** Einstellungen → Hardware-Codec
@@ -444,28 +479,28 @@ Aktiviert den Hardware-Codec, um das Bild flüssiger zu machen.
 
 ### peer-card-ui-type
 
-Steuert die Ansicht der Gegenstellenkarten, einschließlich "Große Kacheln", "Kleine Kacheln" und "Liste".
+Steuert die Ansicht der Peer-Karten, umfasst "Große Kacheln", "Kleine Kacheln" und "Liste".
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Home → Panel der Gegenstellen → Rastersymbol rechts oben
+1. **Desktop** Startseite → Peer-Panel → Raster-Symbol oben rechts
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
 
-**0** Große Kacheln \
-**1** Kleine Kacheln \
+**0** Große Kacheln  
+**1** Kleine Kacheln  
 **2** Liste
 
 ### peer-sorting
 
-Steuert die Reihenfolge der Gegenstellenkarten.
+Steuert die Reihenfolge der Peer-Karten.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Home → Panel der Gegenstellen → Rastersymbol rechts oben
+1. **Desktop** Startseite → Peer-Panel → Sortier-Symbol oben rechts
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -474,12 +509,12 @@ Steuert die Reihenfolge der Gegenstellenkarten.
 
 ### sync-ab-with-recent-sessions
 
-Steuert, ob das Adressbuch mit den letzten Sitzungen synchronisiert werden soll.
+Steuert, ob das Adressbuch mit den letzten Sitzungen synchronisiert wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Home → Panel der Gegenstellen → Adressbuch → Tags → Drop-down-Menü → Synchronisation mit den letzten Sitzungen
-2. **Mobil** Home → Panel der Gegenstellen → Adressbuch → Tags → Drop-down-Menü → Synchronisation mit den letzten Sitzungen
+1. **Desktop** Startseite → Peer-Panel → Adressbuch → Tags → Dropdown-Menü → Mit letzten Sitzungen synchronisieren
+2. **Mobil** Startseite → Peer-Panel → Adressbuch → Tags → Dropdown-Menü → Mit letzten Sitzungen synchronisieren
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -487,12 +522,12 @@ Steuert, ob das Adressbuch mit den letzten Sitzungen synchronisiert werden soll.
 
 ### sync-ab-tags
 
-Steuert, ob die Adressbuch-Tags sortiert werden sollen.
+Steuert, ob die Adressbuch-Tags sortiert werden.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Home → Panel der Gegenstellen → Adressbuch → Tags → Drop-down-Menü → Sortieren nach
-2. **Mobil** Home → Panel der Gegenstellen → Adressbuch → Tags → Drop-down-Menü → Sortieren nach
+1. **Desktop** Startseite → Peer-Panel → Adressbuch → Tags → Dropdown-Menü → Tags sortieren
+2. **Mobil** Startseite → Peer-Panel → Adressbuch → Tags → Dropdown-Menü → Tags sortieren
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -500,14 +535,14 @@ Steuert, ob die Adressbuch-Tags sortiert werden sollen.
 
 ### filter-ab-by-intersection
 
-Filtert das Adressbuch nach Tag-Überschneidungen.
+Adressbuch nach Tag-Schnittpunkt filtern.
 
 **Vorschau**: [PR #5985](https://github.com/rustdesk/rustdesk/pull/5985)
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Home → Panel der Gegenstellen → Adressbuch → Tags → Drop-down-Menü → Nach Überschneidungen filtern
-2. **Mobil** Home → Panel der Gegenstellen → Adressbuch → Tags → Drop-down-Menü → Nach Überschneidungen filtern
+1. **Desktop** Startseite → Peer-Panel → Adressbuch → Tags → Dropdown-Menü → Nach Schnittpunkt filtern
+2. **Mobil** Startseite → Peer-Panel → Adressbuch → Tags → Dropdown-Menü → Nach Schnittpunkt filtern
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -517,14 +552,14 @@ Filtert das Adressbuch nach Tag-Überschneidungen.
 
 ### view-only
 
-Mit dieser Option wird die Option "view-only" für jede Gegenstelle nach der ersten Verbindung aktiviert.
+Diese Option setzt die "Nur-Ansicht"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "view-only" in den Einstellungen jeder Gegenstelle steuert dann, ob die Verbindung nur angezeigt wird.
+Dann steuert die "Nur-Ansicht"-Option in den Einstellungen jedes Peers, ob die Verbindung nur zur Ansicht dient.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Ansichtsmodus
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Ansichtsmodus
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Ansichtsmodus
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Ansichtsmodus
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -532,13 +567,13 @@ Die Option "view-only" in den Einstellungen jeder Gegenstelle steuert dann, ob d
 
 ### show-monitors-toolbar
 
-Steuert, ob Bildschirme in der Symbolleiste angezeigt werden sollen.
+Steuert, ob Monitore in der Symbolleiste angezeigt werden.
 
 ![show-monitors-toolbar](/docs/en/self-host/client-configuration/advanced-settings/images/show-monitors-toolbar.png)
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Bildschirme in der Symbolleiste anzeigen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Monitor-Symbolleiste anzeigen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -547,11 +582,11 @@ Steuert, ob Bildschirme in der Symbolleiste angezeigt werden sollen.
 
 ### collapse-toolbar
 
-Steuert, ob die entfernte Symbolleiste nach der Verbindung eingeklappt wird.
+Steuert, ob die Remote-Symbolleiste nach dem Verbinden eingeklappt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Symbolleiste einklappen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Symbolleiste einklappen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -560,14 +595,14 @@ Steuert, ob die entfernte Symbolleiste nach der Verbindung eingeklappt wird.
 
 ### show-remote-cursor
 
-Mit dieser Option wird die Option "show-remote-cursor" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Remote-Cursor anzeigen"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "show-remote-cursor" in den Einstellungen jeder Gegenstelle steuert dann, ob der entfernte Cursor auf der entfernten Seite angezeigt wird.
+Dann steuert die "Remote-Cursor anzeigen"-Option in den Einstellungen jedes Peers, ob der Remote-Cursor auf der Remote-Control-Seite angezeigt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Entfernten Cursor anzeigen
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Entfernten Cursor anzeigen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Remote-Cursor anzeigen
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Remote-Cursor anzeigen
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -575,16 +610,16 @@ Die Option "show-remote-cursor" in den Einstellungen jeder Gegenstelle steuert d
 
 ### follow-remote-cursor
 
-Mit dieser Option wird die Option "follow-remote-cursor" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Remote-Cursor folgen"-Option für jeden Peer nach der ersten Verbindung.
 
-Dann steuert die Option "follow-remote-cursor" in den Einstellungen jeder Gegenstelle, ob sie dem entfernten Cursor folgt.
+Dann steuert die "Remote-Cursor folgen"-Option in den Einstellungen jedes Peers, ob dem Remote-Cursor gefolgt wird.
 
 **Vorschau**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Dem entfernten Cursor folgen
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Dem entfernten Cursor folgen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Remote-Cursor folgen
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Remote-Cursor folgen
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -592,16 +627,16 @@ Dann steuert die Option "follow-remote-cursor" in den Einstellungen jeder Gegens
 
 ### follow-remote-window
 
-Mit dieser Option wird die Option "follow-remote-window" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Remote-Fenster folgen"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "follow-remote-window" in den Einstellungen jeder Gegenstelle steuert dann, ob sie dem entfernten Fenster folgen soll.
+Dann steuert die "Remote-Fenster folgen"-Option in den Einstellungen jedes Peers, ob dem Remote-Fenster gefolgt wird.
 
 **Vorschau**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Dem Fokus des entfernten Fensters folgen
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Dem Fokus des entfernten Fensters folgen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Remote-Fensterfokus folgen
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Remote-Fensterfokus folgen
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -609,13 +644,13 @@ Die Option "follow-remote-window" in den Einstellungen jeder Gegenstelle steuert
 
 ### zoom-cursor
 
-Mit dieser Option wird die Option "zoom-cursor" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Cursor zoomen"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "zoom-cursor" in den Einstellungen jeder Gegenstelle steuert dann, ob der Cursor auf der Grundlage des aktuellen Bildmaßstabs skaliert wird.
+Die "Cursor zoomen"-Option in den Einstellungen jedes Peers steuert dann, ob der Cursor basierend auf der aktuellen Bildskalierung skaliert wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Cursor vergrößern
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Cursor zoomen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -624,14 +659,14 @@ Die Option "zoom-cursor" in den Einstellungen jeder Gegenstelle steuert dann, ob
 
 ### show-quality-monitor
 
-Mit dieser Option wird die Option "show-quality-monitor" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Qualitätsmonitor anzeigen"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "show-quality-monitor" in den Einstellungen jeder Gegenstelle steuert dann, ob der Qualitätsmonitor angezeigt werden soll.
+Die "Qualitätsmonitor anzeigen"-Option in den Einstellungen jedes Peers steuert dann, ob der Qualitätsmonitor angezeigt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Qualitätsüberwachung anzeigen
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Qualitätsüberwachung anzeigen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Qualitätsmonitor anzeigen
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Qualitätsmonitor anzeigen
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -639,14 +674,14 @@ Die Option "show-quality-monitor" in den Einstellungen jeder Gegenstelle steuert
 
 ### disable-audio
 
-Mit dieser Option wird die Option "disable-audio" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Audio deaktivieren"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "disable-audio" in den Einstellungen jeder Gegenstelle steuert dann, ob Ton abgespielt wird.
+Die "Audio deaktivieren"-Option in den Einstellungen jedes Peers steuert dann, ob Ton wiedergegeben wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Stummschalten
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Stummschalten
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Stumm
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Stumm
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -654,13 +689,13 @@ Die Option "disable-audio" in den Einstellungen jeder Gegenstelle steuert dann, 
 
 ### enable-file-copy-paste
 
-Mit dieser Option wird die Option "enable-file-copy-paste" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Dateikopieren und -einfügen aktivieren"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "enable-file-copy-paste" in den Einstellungen jeder Gegenstelle steuert dann das Kopieren und Einfügen von Dateien in der Verbindung.
+Die "Dateikopieren und -einfügen aktivieren"-Option in den Einstellungen jedes Peers steuert dann, ob Dateikopieren und -einfügen in der Verbindung aktiviert wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Kopieren und Einfügen von Dateien zulassen (nur Windows)
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Dateikopieren und -einfügen aktivieren (nur Windows)
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -669,14 +704,14 @@ Die Option "enable-file-copy-paste" in den Einstellungen jeder Gegenstelle steue
 
 ### disable-clipboard
 
-Mit dieser Option wird die Option "disable-clipboard" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Zwischenablage deaktivieren"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "disable-clipboard" in den Einstellungen jeder Gegenstelle steuert dann, ob das Kopieren und Einfügen von Text möglich ist.
+Die "Zwischenablage deaktivieren"-Option in den Einstellungen jedes Peers steuert dann, ob Textkopieren und -einfügen aktiviert wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Zwischenablage deaktivieren
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Zwischenablage deaktivieren
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Zwischenablage deaktivieren
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Zwischenablage deaktivieren
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -684,14 +719,14 @@ Die Option "disable-clipboard" in den Einstellungen jeder Gegenstelle steuert da
 
 ### lock-after-session-end
 
-Mit dieser Option wird die Option "lock-after-session-end" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Nach Sitzungsende sperren"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "lock-after-session-end" in den Einstellungen jeder Gegenstelle steuert dann, ob der Rechner der Gegenstelle nach Beendigung der Sitzung gesperrt werden soll.
+Die "Nach Sitzungsende sperren"-Option in den Einstellungen jedes Peers steuert dann, ob die Peer-Maschine nach dem Ende der Sitzung gesperrt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Nach Sitzungsende sperren
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Nach Sitzungsende sperren
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Nach Sitzungsende sperren
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Nach Sitzungsende sperren
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -699,14 +734,14 @@ Die Option "lock-after-session-end" in den Einstellungen jeder Gegenstelle steue
 
 ### privacy-mode
 
-Mit dieser Option wird die Option "privacy-mode" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Datenschutzmodus"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "privacy-mode" in den Einstellungen jeder Gegenstelle steuert dann, ob nach der Verbindung der Datenschutzmodus verwendet werden soll.
+Die "Datenschutzmodus"-Option in den Einstellungen jedes Peers steuert dann, ob der Datenschutzmodus nach dem Verbinden verwendet wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Datenschutzmodus
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Datenschutzmodus
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Datenschutzmodus
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Datenschutzmodus
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -714,14 +749,14 @@ Die Option "privacy-mode" in den Einstellungen jeder Gegenstelle steuert dann, o
 
 ### touch-mode
 
-Mit dieser Option wird die Option "touch-mode" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Touch-Modus"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "touch-mode" in den Einstellungen jeder Gegenstelle steuert dann, ob der Touch-Modus oder der Mausmodus verwendet wird.
+Die "Touch-Modus"-Option in den Einstellungen jedes Peers steuert dann, ob Touch-Modus oder Maus-Modus verwendet wird.
 
-**Position**:
+**Ort**:
 
 1. **Desktop**
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Touch-Modus
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Touch-Modus
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -729,14 +764,14 @@ Die Option "touch-mode" in den Einstellungen jeder Gegenstelle steuert dann, ob 
 
 ### i444
 
-Mit dieser Option wird die Option "i444" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "i444"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "i444" in den Einstellungen jeder Gegenstelle steuert dann, ob True Color verwendet werden soll.
+Die "i444"-Option in den Einstellungen jedes Peers steuert dann, ob echte Farben verwendet werden.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → True Color (4:4:4)
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → True Color (4:4:4)
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Echte Farben (4:4:4)
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Echte Farben (4:4:4)
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -744,14 +779,14 @@ Die Option "i444" in den Einstellungen jeder Gegenstelle steuert dann, ob True C
 
 ### reverse-mouse-wheel
 
-Mit dieser Option wird die Option "reverse-mouse-wheel" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Mausrad umkehren"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "reverse-mouse-wheel" in den Einstellungen jeder Gegenstelle steuert dann, ob das Mausrad rückwärtsgedreht werden soll.
+Die "Mausrad umkehren"-Option in den Einstellungen jedes Peers steuert dann, ob das Mausrad umgekehrt wird.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Mausrad rückwärtsdrehen
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Mausrad rückwärtsdrehen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Mausrad umkehren
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Mausrad umkehren
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -759,14 +794,14 @@ Die Option "reverse-mouse-wheel" in den Einstellungen jeder Gegenstelle steuert 
 
 ### swap-left-right-mouse
 
-Mit dieser Option wird die Option "swap-left-right-mouse" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Linke-rechte Maustaste vertauschen"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "swap-left-right-mouse" in den Einstellungen jeder Gegenstelle steuert dann, ob die linke und rechte Maustaste getauscht werden soll.
+Die "Linke-rechte Maustaste vertauschen"-Option in den Einstellungen jedes Peers steuert dann, ob die linke und rechte Maustaste vertauscht werden.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Linke und rechte Maustaste tauschen
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Weitere Standardeinstellungen → Linke und rechte Maustaste tauschen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Linke-rechte Maustaste vertauschen
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Linke-rechte Maustaste vertauschen
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
@@ -774,15 +809,15 @@ Die Option "swap-left-right-mouse" in den Einstellungen jeder Gegenstelle steuer
 
 ### displays-as-individual-windows
 
-Mit dieser Option wird die Option "displays-as-individual-windows" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Displays als einzelne Fenster anzeigen"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "displays-as-individual-windows" in den Einstellungen jeder Gegenstelle steuert dann, ob die Anzeigen als einzelne Fenster angezeigt werden sollen.
+Die "Displays als einzelne Fenster anzeigen"-Option in den Einstellungen jedes Peers steuert dann, ob Displays als einzelne Fenster angezeigt werden.
 
 **Vorschau**: [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Jeden Bildschirm in einem eigenen Fenster anzeigen
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Displays als einzelne Fenster anzeigen
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -791,15 +826,15 @@ Die Option "displays-as-individual-windows" in den Einstellungen jeder Gegenstel
 
 ### use-all-my-displays-for-the-remote_session
 
-Mit dieser Option wird die Option "use-all-my-displays-for-the-remote_session" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Alle meine Displays für die Remote-Sitzung verwenden"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "use-all-my-displays-for-the-remote_session" in den Einstellungen jeder Gegenstelle steuert dann, ob alle meine Bildschirme für die entfernte Sitzung verwendet werden sollen.
+Die "Alle meine Displays für die Remote-Sitzung verwenden"-Option in den Einstellungen jedes Peers steuert dann, ob alle meine Displays für die Remote-Sitzung verwendet werden.
 
 **Vorschau**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Weitere Standardeinstellungen → Alle meine Bildschirme für die Fernsitzung verwenden
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Alle meine Displays für die Remote-Sitzung verwenden
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -808,13 +843,13 @@ Die Option "use-all-my-displays-for-the-remote_session" in den Einstellungen jed
 
 ### view-style
 
-Mit dieser Option wird die Option "view-style" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Ansichtsstil"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "view-style" in den Einstellungen jeder Gegenstelle steuert dann den Ansichtsstil.
+Die "Ansichtsstil"-Option in den Einstellungen jedes Peers steuert dann den Ansichtsstil.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Standard-Ansichtsstil
+1. **Desktop** Einstellungen → Anzeige → Standard-Ansichtsstil
 2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Ansichtsstil
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -823,28 +858,28 @@ Die Option "view-style" in den Einstellungen jeder Gegenstelle steuert dann den 
 
 ### scroll-style
 
-Mit dieser Option wird die Option "scroll-style" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Scroll-Stil"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "scroll-style" in den Einstellungen jeder Gegenstelle steuert dann den Scroll-Stil.
+Die "Scroll-Stil"-Option in den Einstellungen jedes Peers steuert dann den Scroll-Stil.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Standard-Scroll-Stil
+1. **Desktop** Einstellungen → Anzeige → Standard-Scroll-Stil
 2. **Mobil**
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
 
-## image-quality
+### image-quality
 
-Mit dieser Option wird die Option "image-quality" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Bildqualität"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "image-quality" in den Einstellungen jeder Gegenstelle steuert dann die Bildqualität.
+Die "Bildqualität"-Option in den Einstellungen jedes Peers steuert dann die Bildqualität.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Standard-Bildqualität
+1. **Desktop** Einstellungen → Anzeige → Standard-Bildqualität
 2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Bildqualität
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -853,13 +888,13 @@ Die Option "image-quality" in den Einstellungen jeder Gegenstelle steuert dann d
 
 ### custom-image-quality
 
-Mit dieser Option wird die Option "custom-image-quality" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Benutzerdefinierte Bildqualität"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "custom-image-quality" in den Einstellungen jeder Gegenstelle steuert dann die Bildqualität, wenn "image-quality" auf "custom" eingestellt ist.
+Die "Benutzerdefinierte Bildqualität"-Option in den Einstellungen jedes Peers steuert dann die Bildqualität, wenn "image-quality" auf custom gesetzt ist.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Standard-Bildqualität → Benutzerdefiniert
+1. **Desktop** Einstellungen → Anzeige → Standard-Bildqualität → Benutzerdefiniert
 2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Bildqualität → Benutzerdefiniert
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -868,13 +903,13 @@ Die Option "custom-image-quality" in den Einstellungen jeder Gegenstelle steuert
 
 ### custom-fps
 
-Mit dieser Option wird die Option "custom-fps" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Benutzerdefinierte FPS"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "custom-fps" in den Einstellungen jeder Gegenstelle steuert dann die fps, wenn "image-quality" auf "custom" eingestellt ist.
+Die "Benutzerdefinierte FPS"-Option in den Einstellungen jedes Peers steuert dann die FPS, wenn "image-quality" auf custom gesetzt ist.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Standard-Bildqualität → Benutzerdefiniert
+1. **Desktop** Einstellungen → Anzeige → Standard-Bildqualität → Benutzerdefiniert
 2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Bildqualität → Benutzerdefiniert
 
 | Installation erforderlich | Werte | Standard | Beispiel |
@@ -883,24 +918,260 @@ Die Option "custom-fps" in den Einstellungen jeder Gegenstelle steuert dann die 
 
 ### codec-preference
 
-Mit dieser Option wird die Option "codec-preference" für jede Gegenstelle nach der ersten Verbindung gesetzt.
+Diese Option setzt die "Codec-Präferenz"-Option für jeden Peer nach der ersten Verbindung.
 
-Die Option "codec-preference" in den Einstellungen jeder Gegenstelle steuert dann den Codec für die Bilder.
+Die "Codec-Präferenz"-Option in den Einstellungen jedes Peers steuert dann den Codec für Bilder.
 
-**Position**:
+**Ort**:
 
-1. **Desktop** Einstellungen → Bildschirm → Standard-Codec
+1. **Desktop** Einstellungen → Anzeige → Standard-Codec
 2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Codec
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
-**Achtung**: Andere Optionen als "vp8" und "vp9" funktionieren möglicherweise nicht. Dies hängt davon ab, was Ihr Rechner unterstützt.
+**Vorsicht**: Optionen außer "vp8" und "vp9" funktionieren möglicherweise nicht. Dies hängt davon ab, was Ihre Maschine unterstützt.
+
+## Sonstiges
+
+### preset-address-book-name & preset-address-book-tag
+
+Voreingestellter Adressbuchname und -tag, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Sie können nur preset-address-book-name setzen, wenn Sie keinen Tag setzen möchten.
+Bitte verwenden Sie gültige Adressbuchnamen und -tags auf Ihrer Adressbuchseite der Web-Konsole.
+
+| Option | Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: | :------: |
+| preset-address-book-name | N | | | `preset-address-book-name=<Adressbuchname>` |
+| preset-address-book-tag | N | | | `preset-address-book-tag=<Adressbuch-Tag-Name>` |
+
+### disable-group-panel
+
+Gruppenbereich (neben dem Adressbuchbereich, seit 1.3.8 "Zugängliche Geräte" genannt) im RustDesk-Client deaktivieren, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
+
+| Option | Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-group-panel | N | Y, N | N | `disable-group-panel=Y` |
+
+### pre-elevate-service
+
+Automatische Rechteerweiterung beim Start für Windows Portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
+
+| Option | Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: | :------: |
+| pre-elevate-service | N | Y, N | N | `pre-elevate-service=Y` |
+
+### disable-floating-window
+
+Wenn der Android-Service startet, zeigt er ein schwebendes Fenster an, das hilft zu verhindern, dass das System den RustDesk-Service beendet.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-window=Y` |
+
+### floating-window-size
+
+Wenn der Android-Service startet, zeigt er ein schwebendes Fenster an, das hilft zu verhindern, dass das System den RustDesk-Service beendet. Wenn die Größe weniger als 120 beträgt, wird das schwebende Fenster schwer anklickbar sein. Eine sehr kleine Größe kann möglicherweise nicht den Hintergrunddienst auf einigen Geräten aufrechterhalten.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| [32, 320] | 120 | `floating-window-size=120` |
+
+### floating-window-untouchable
+
+Standardmäßig öffnet ein Klick auf das schwebende Fenster ein Menü. Nach der Einstellung auf 'untouchable' werden Klicks oder Wischbewegungen durch das schwebende Fenster hindurchgehen und an das darunterliegende Fenster übertragen. Nach der Einstellung auf 'untouchable' kann die Position des schwebenden Fensters nicht geändert werden, und das System kann das schwebende Fenster automatisch halbtransparent setzen. Diese Funktion funktioniert jedoch möglicherweise nicht in einer kleinen Anzahl von Anwendungen, wie der GitHub-App.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `floating-window-untouchable=Y` |
+
+### floating-window-transparency
+
+Android-schwebende Fenster haben einstellbare Transparenz. Wenn Sie das schwebende Fenster aktivieren, aber verstecken möchten, können Sie die Transparenz auf 0 setzen, das schwebende Fenster wird automatisch auf 'untouchable' gesetzt, um Klick-Events durchzulassen.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| [0, 10] | 10 | `floating-window-transparency=5` |
+
+### floating-window-svg
+
+Wenn für das Android-schwebende Fenster kein Icon gesetzt ist, wird standardmäßig das RustDesk-Icon angezeigt.
+Beim Setzen schreiben Sie bitte den Textinhalt von SVG in eine Zeile und beachten Sie die [SVG-Unterstützungsbeschränkungen](https://bigbadaboom.github.io/androidsvg/index.html).
+
+| Standard | Beispiel |
+| :------: | :------: |
+| RustDesk-Icon | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
+
+### keep-screen-on
+
+Dies ist für die Android-gesteuerte Seite. Beachten Sie, dass das Bildschirm-Ein-Halten vom schwebenden Fenster abhängt.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
+
+### enable-directx-capture
+
+Dies ist für die Windows-gesteuerte Seite. Wenn Sie keine Probleme haben, wird empfohlen, die Standardeinstellungen zu verwenden, die DirectX für Screenshots priorisieren, anstatt GDI direkt zu verwenden.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-directx-capture=N` |
+
+### enable-android-software-encoding-half-scale
+
+Dies ist für die Android-gesteuerte Seite. Standardmäßig, wenn die Auflösung größer als 1200 ist, verwendet Hardware-Kodierung die ursprüngliche Auflösung, während Software-Kodierung die halbe Auflösung verwendet, da Software-Kodierung langsamer ist. Diese Option wird verwendet, um zu setzen, ob Software-Kodierung auf die halbe Auflösung skaliert werden soll.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-android-software-encoding-half-scale=N` |
+
+### allow-remote-cm-modification
+
+Steuert, ob die Steuerungsseite auf das Verbindungsverwaltungsfenster klicken darf, um Verbindungen zu akzeptieren, Berechtigungen zu ändern usw.
+
+https://github.com/rustdesk/rustdesk/issues/7425
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-remote-cm-modification=Y` |
+
+### remove-preset-password-warning
+
+Steuert, ob die Sicherheitswarnung auf der GUI entfernt wird, wenn im benutzerdefinierten Client ein voreingestelltes Passwort vorhanden ist.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/286
+
+https://github.com/rustdesk/rustdesk/discussions/7956
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `remove-preset-password-warning=Y` |
+
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
+
+Steuert, ob einige Einstellungen ausgeblendet werden. Bitte stellen Sie sicher, dass `Einstellungen deaktivieren` ausgeschaltet ist, sonst funktionieren diese nicht.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/263
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/276
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-security-settings=Y` |
+
+### hide-username-on-card
+
+Steuert, ob der Benutzername in der Geräteliste angezeigt wird. Weil manchmal der Benutzername zu lang ist, werden die anderen Informationen ausgeblendet.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-username-on-card=Y` |
+
+### hide-help-cards
+
+Steuert, ob UAC / Berechtigungswarnungen auf der GUI angezeigt werden.
+
+https://github.com/rustdesk/rustdesk/issues/8687
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-help-cards=Y` |
+
+### display-name
+
+Ändern Sie Ihren Anzeigenamen, der im Popup angezeigt wird, wenn Sie sich mit einem Remote-Gerät verbinden. Standardmäßig wird zuerst der Name des angemeldeten Benutzers angezeigt, andernfalls wird Ihr OS-Benutzername angezeigt.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/277
+
+### disable-udp
+
+Steuert, ob nur TCP verwendet wird. Es wird UDP 21116 nicht mehr verwenden, stattdessen wird TCP 21116 verwendet.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-udp=Y` |
+
+### preset-user-name / preset-strategy-name / preset-device-group-name
+
+Weisen Sie Benutzer / Strategie / Gerätegruppe dem Gerät zu. Sie können dies auch über die [Befehlszeile](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices) tun.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+Gerätegruppe ist verfügbar in RustDesk-Client >=1.3.8, Pro >= 1.5.0
+
+### default-connect-password
+
+Sie verwenden das `Standard-Verbindungspasswort`, um Verbindungen zu Remote-Geräten herzustellen. Dieses Passwort wird auf der Steuerungsseite konfiguriert und sollte nicht mit einem [voreingestellten Passwort](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) verwechselt werden, das auf dem gesteuerten (nur eingehenden) Client zu finden ist.
+
+z.B. `default-connect-password=abcd1234`
+
+### enable-trusted-devices
+
+Erlauben Sie vertrauenswürdigen Geräten, die 2FA-Verifizierung zu überspringen.
+
+https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-trusted-devices=N` |
+
+### hide-tray
+
+Deaktivieren Sie das Tray-Icon in der Systemleiste.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/332
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-tray=Y` |
+
+### one-way-clipboard-redirection
+
+Zwischenablage-Synchronisation von der gesteuerten Seite zur Steuerungsseite deaktivieren, verfügbar in RustDesk-Client >=1.3.1 (gesteuerte Seite)
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-clipboard-redirection=Y` |
+
+### one-way-file-transfer
+
+Dateiübertragung von der gesteuerten Seite zur Steuerungsseite deaktivieren, verfügbar in RustDesk-Client >=1.3.1 (gesteuerte Seite)
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-file-transfer=Y` |
+
+### sync-init-clipboard
+
+Ob die initiale Zwischenablage beim Herstellen der Verbindung synchronisiert wird (nur von der Steuerungsseite zur gesteuerten Seite), verfügbar in RustDesk-Client >=1.3.1 (Steuerungsseite)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `sync-init-clipboard=Y` |
+
+### allow-logon-screen-password
+
+Ob Passworteingabe auf dem Anmeldebildschirm erlaubt ist, wenn [Nur-Klick-Genehmigungsmodus](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) verwendet wird, verfügbar in RustDesk-Client >=1.3.1 (gesteuerte Seite)
+
+https://github.com/rustdesk/rustdesk/discussions/9269
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-logon-screen-password=Y` |
 
 ### allow-https-21114
 
-Normalerweise verwendet HTTPS Port 443. Wenn der Port des API-Servers fälschlicherweise auf 21114 eingestellt ist, besteht die Standardaktion darin, die Porteinstellung 21114 zu entfernen. Wenn Sie die Option auf Y setzen, kann 21114 als HTTPS-Port verwendet werden. Verfügbar im RustDesk-Client >=1.3.9.
+Normalerweise verwendet HTTPS Port 443. Wenn der Port des API-Servers fälschlicherweise auf 21114 gesetzt ist, entfernt der RustDesk-Client standardmäßig die 21114-Port-Einstellung. Das Setzen der Option auf Y erlaubt die Verwendung von 21114 als HTTPS-Port. Verfügbar in RustDesk-Client >=1.3.9.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
@@ -910,8 +1181,60 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
 ### allow-d3d-render
 
-D3D-Rendering kann eine höhere FPS erreichen und die CPU-Auslastung reduzieren, aber der Fernsteuerungsbildschirm kann auf einigen Geräten schwarz sein. Nur verfügbar in RustDesk Client >=1.3.9, nur für Windows.
+D3D-Rendering kann hohe FPS erreichen und die CPU-Nutzung reduzieren, aber der Remote-Control-Bildschirm kann auf einigen Geräten schwarz sein. Verfügbar in RustDesk-Client >=1.3.9, nur Windows.
 
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
+
+### allow-hostname-as-id
+
+[Hostname als ID verwenden](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), Leerzeichen im Hostname werden durch '-' ersetzt. Dies ist nicht 100% garantiert und tritt nur beim ersten Ausführen des RustDesk-Clients auf (d.h. bei einem neu installierten Client); wenn ein Konflikt auftritt, wird eine zufällige ID zugewiesen.
+
+Verfügbar in RustDesk-Client Version 1.4.0 und später.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-hostname-as-id=Y` |
+
+### allow-websocket
+
+WebSocket-Protokoll zur Verbindung von Server und Client verwenden. Nur verfügbar in RustDesk-Client >=1.4.0 und Pro-Server >= 1.5.7. Beachten Sie, dass WebSocket nur Relay-Verbindungen unterstützt.
+
+Um WebSocket zum Laufen zu bringen, müssen Sie Ihren Reverse-Proxy korrekt konfigurieren, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+Diese Option aktiviert oder deaktiviert die Verwendung von rein numerischen Einmal-Passwörtern.
+Nur verfügbar in RustDesk-Client >=1.4.1 und Pro-Server >= 1.5.9.
+
+**Diskussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**Vorschau**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
+### register-device
+
+Das Gerät nicht registrieren, Sie werden es nicht auf der Geräteseite in der Web-Konsole sehen.
+
+**Nur verfügbar in Pro-Server >= 1.6.0 und erfordert [custom2-Lizenz](https://rustdesk.com/pricing#custom2) und Anzahl gleichzeitiger Verbindungen >= 2.**
+
+Wenn `register-device=N`, funktioniert das Folgende nicht für dieses Gerät.
+- Anmelden
+- `--assign`-Befehl
+- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- Audit-Logs
+- Strategie
+
+**Diskussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 und https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `register-device=N` |

@@ -3,67 +3,69 @@ title: Synology DSM 6
 weight: 22
 ---
 
-Ce tutoriel est basé sur DSM V6, ne diffère que légèrement pour DSM V7.
+> Un tutoriel alternatif à jour de tiers est [ici](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
 
-### Installation de Docker
+Ce tutoriel est basé sur les dernières versions DSM v6 et v7.
 
-Avec l'outils centre de paquet, installez docker
-
-|             |                                                   |
-| --------------- | -------------------------------------------------------- |
-![](images/package-manager.png) | ![](images/docker.png)
-
-
-### Installation du server RustDesk
-
-| Recherchez Rustdesk-Server dans le registre Docker et l'installer par un double clic  |   L'image rustdesk-Server installée alors double-cliquez pour créer un conteneur Rustdesk-Server                                    |
-| --------------- | -------------------------------------------------------- |
-![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png)
-
-
-### Créer le conteneur hbbs
-
-Comme mentionné ci-dessus, double-cliquez sur l'image Rustdesk-Server pour créer un nouveau conteneur, nommez-le sur `hbbs`.
-![](images/hbbs.png) 
-
-Cliquez sur "Paramètres avancés" ci-dessus.
-
-- Activer le redémarrage automatique
-![](images/auto-restart.png) 
-
-- Activer "Utiliser le même réseau que Docker Host", Pour en savoir plus sur le réseau hôte, s'il vous plaît [voir](/docs/en/self-host/install/#net-host)
-![](images/host-net.png) 
-
-- Monter un répertoire depuis l'hôte (ex: `partage/test/`) vers `/root`, HBBS générera des fichiers (y compris le fichier clé `key`) dans ce répertoire
-| Montage du répertoire hôte | Fichiers générés dans le répertoire de l'hôte |
-|-- | -- |
-![](images/mount.png?width=500px) | ![](images/mounted-dir.png?width=300px) 
-
-- Définir  command
 {{% notice note %}}
-Le système d'exploitation Synology est basé sur Debian. La configuration sur réseau hôte (--net = host), nous évitera de définir l'exposition des ports avec l'option `-p`.
+Après la mise à jour DSM 7.2, Docker a été mis à niveau vers le nouveau "Container Manager", veuillez vérifier [cet article](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7) à la place.
+{{% /notice %}}
 
-`192.168.16.98` est une IP intranet utilisée ici pour la démonstration seulement, vous devrez utiliser une IP publique lors du déploiement.
+## Installer Docker
+
+| Ouvrir le Centre de Paquets | Installer Docker |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/package-manager.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/docker.png) |
+
+## Installer RustDesk Server
+
+| Rechercher rustdesk-server dans le registre Docker et installer en double-cliquant | Image rustdesk-server installée, double-cliquer pour créer le conteneur rustdesk-server |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/rustdesk-server-installed.png) |
+
+## Créer le conteneur hbbs
+
+Comme mentionné ci-dessus, double-cliquez sur l'image rustdesk-server pour créer un nouveau conteneur, définissez le nom sur `hbbs`.
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs.png)
+
+Cliquez sur `Paramètres Avancés` ci-dessus.
+
+- Activez `Activer le redémarrage automatique`.
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/auto-restart.png)
+
+- Activez `Utiliser le même réseau que l'Hôte Docker`. Pour plus d'infos sur host net, veuillez [vérifier](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/host-net.png)
+
+- Montez un répertoire hôte (ex. `/home/rustdesk/`) vers `/root`, hbbs va générer quelques fichiers (base de données et fichiers `key`) dans ce répertoire qui doivent persister à travers les redémarrages.
+
+| Monter | Fichiers générés dans le répertoire hôte |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mount.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mounted-dir.png) |
+
+- Définir la commande
+{{% notice note %}}
+L'OS de Synology est basé sur Debian, donc host net (--net=host) fonctionne bien, nous n'avons pas besoin de mapper les ports avec l'option `-p`.
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v3) 
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs-cmd.png?v3)
 
 - Terminé
-  
-![](images/hbbs-config.png) 
 
-### Créer le conteneur hbbr
+## Créer le conteneur hbbr
 
-Veuillez répéter les même étapes que pour `hbbs` ci-dessus, mais modifiez le nom du conteneur en `hbbr` et saisir en commande `hbbr`.
-![](images/hbbr-config.png) 
+Veuillez répéter les étapes `hbbs` ci-dessus, mais nommez le conteneur `hbbr` et la commande (pour l'Étape Définir Commande) devrait être `hbbr`.
 
-### conteneurs hbbr/hbbs
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbr-config.png)
 
-![](images/containers.png?width=500px)
+## conteneurs hbbr/hbbs
 
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/containers.png)
 
-| Double-cliquez sur le conteneur et vérifiez le journal | Vérifier et confirmer que les conteneurs HBBS et HBBR utilisent le réseau hôte |
-|-- | -- |
-![](images/log.png?width=500px) | ![](images/network-types.png?width=500px)
+| Double-cliquez sur le conteneur et vérifiez le log | Double confirmez que hbbs/hbbr utilisent le réseau hôte |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/log.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/network-types.png) |
 
+## Récupérer votre Clé
+
+Naviguez vers le dossier configuré précédemment en utilisant File Station, téléchargez `id_ed25519.pub` et ouvrez-le avec un éditeur de texte pour voir votre clé.

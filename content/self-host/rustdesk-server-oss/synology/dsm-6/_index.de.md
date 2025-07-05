@@ -3,73 +3,69 @@ title: Synology DSM 6
 weight: 22
 ---
 
-> Eine alternative aktuelle Anleitung von Dritten ist [hier](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
+> Ein alternatives aktuelles Tutorial von Dritten ist [hier](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
 
-Diese Anleitung basiert auf dem aktuellen DSM v6 und v7.
+Dieses Tutorial basiert auf den neuesten DSM v6 und v7.
 
 {{% notice note %}}
-Nach dem Update auf DSM 7.2 wird Docker auf den neuen "Container Manager" umgestellt. Bitte lesen Sie stattdessen [diesen Artikel](/docs/de/self-host/rustdesk-server-oss/synology/dsm-7).
+Nach dem DSM 7.2 Update wurde Docker auf den neuen "Container Manager" aktualisiert, bitte prüfen Sie [diesen Artikel](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7) stattdessen.
 {{% /notice %}}
 
-### Docker installieren
+## Docker installieren
 
 | Paketzentrum öffnen | Docker installieren |
 | --- | --- |
-| ![](images/package-manager.png) | ![](images/docker.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/package-manager.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/docker.png) |
 
-### RustDesk-Server installieren
+## RustDesk Server installieren
 
-| RustDesk-Server im Docker-Register suchen und per Doppelklick installieren | RustDesk-Server-Image ist installiert, Doppelklick zum Erstellen des RustDesk-Server-Containers |
+| Suchen Sie rustdesk-server in Docker's Registry und installieren Sie per Doppelklick | Installiertes rustdesk-server Image, doppelklicken Sie um rustdesk-server Container zu erstellen |
 | --- | --- |
-| ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/rustdesk-server-installed.png) |
 
-### hbbs-Container erstellen
+## hbbs Container erstellen
 
-Wie oben erwähnt, doppelklicken Sie auf das RustDesk-Server-Image, um einen neuen Container zu erstellen. Geben Sie ihm den Namen `hbbs`.
-![](images/hbbs.png)
+Wie oben erwähnt, doppelklicken Sie auf das rustdesk-server Image um einen neuen Container zu erstellen, setzen Sie den Namen auf `hbbs`.
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs.png)
 
-Klicken Sie auf `Advanced Settings`.
+Klicken Sie auf die obigen `Erweiterte Einstellungen`.
 
-- Aktivieren Sie `Enable auto-restart`.
-![](images/auto-restart.png)
+- Aktivieren Sie `Automatischen Neustart aktivieren`.
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/auto-restart.png)
 
-- Aktivieren Sie `Use the same network as Docker Host`. Mehr Infos über das Hostnetz siehe [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/docker/#net-host).
-![](images/host-net.png)
+- Aktivieren Sie `Dasselbe Netzwerk wie Docker Host verwenden`. Für mehr über Host-Netz, bitte [prüfen Sie](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/host-net.png)
 
-- Binden Sie ein Host-Verzeichnis (z. B. `/home/rustdesk/`) als `/root` ein, hbbs wird einige Dateien (Datenbank- und `key`-Dateien) in diesem Verzeichnis erzeugen, die über Neustarts hinweg erhalten bleiben müssen.
+- Mounten Sie ein Host-Verzeichnis (z.B. `/home/rustdesk/`) zu `/root`, hbbs wird einige Dateien (Datenbank und `key` Dateien) in diesem Verzeichnis generieren, die über Neustarts hinweg bestehen bleiben müssen.
 
-| Einbinden | Im Host-Verzeichnis erzeugte Dateien |
+| Mount | Dateien generiert im Host-Verzeichnis |
 | --- | --- |
-| ![](images/mount.png) | ![](images/mounted-dir.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mount.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mounted-dir.png) |
 
-- Befehl einstellen
+- Befehl setzen
 {{% notice note %}}
-Das Betriebssystem von Synology basiert auf Debian, daher funktioniert das Hostnetz (--net=host) einwandfrei, wir müssen keine Ports mit der Option `-p` zuordnen.
-
-`192.168.16.98` ist eine interne IP, die hier nur zu Demonstrationszwecken verwendet wird. Bitte setzen Sie sie bei der Bereitstellung auf eine öffentliche IP. Oder Sie verwenden Ihre DDNS-Adresse, wenn Sie eine in "Systemsteuerung → Externer Zugriff → DDNS" konfiguriert haben. Vergessen Sie nicht, die Ports auf Ihrem Router und Ihrer Synology-Firewall zu öffnen, wenn diese in "Systemsteuerung → Sicherheit → Firewall" aktiviert ist!
+Synology's OS ist Debian-basiert, daher funktioniert Host-Netz (--net=host) gut, wir müssen keine Ports mit `-p` Option mappen.
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v3)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs-cmd.png?v3)
 
 - Fertig
 
-![](images/hbbs-config.png)
+## hbbr Container erstellen
 
-### hbbr-Container erstellen
+Bitte wiederholen Sie die obigen `hbbs` Schritte, aber benennen Sie den Container `hbbr` und der Befehl (für Befehl setzen Schritt) sollte `hbbr` sein.
 
-Bitte wiederholen Sie die obigen Schritte für `hbbs`, nennen aber den Container `hbbr` und der Befehl (für den Schritt Befehl einstellen) sollte `hbbr -k_` sein.
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbr-config.png)
 
-![](images/hbbr-config.png)
+## hbbr/hbbs Container
 
-### hbbr/hbbs-Container
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/containers.png)
 
-![](images/containers.png)
-
-| Doppelklicken Sie auf den Container und prüfen Sie das Protokoll | Bestätigen Sie hbbs/hbbr über das Host-Netzwerk doppelt |
+| Doppelklicken Sie auf Container und prüfen Sie das Log | Doppelt bestätigen Sie hbbs/hbbr verwenden Host-Netzwerk |
 | --- | --- |
-| ![](images/log.png) | ![](images/network-types.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/log.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/network-types.png) |
 
-### Ihren Schlüssel abrufen
+## Ihren Schlüssel abrufen
 
-Navigieren Sie zu dem Ordner, der vor der Verwendung der File Station eingerichtet wurde, laden Sie die Datei `id_ed25519.pub` herunter und öffnen Sie sie mit einem Texteditor, um Ihren Schlüssel zu übertragen.
+Navigieren Sie zu dem zuvor eingerichteten Ordner mit File Station, laden Sie `id_ed25519.pub` herunter und öffnen Sie es mit einem Texteditor um Ihren Schlüssel zu sehen.

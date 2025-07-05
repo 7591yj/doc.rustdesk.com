@@ -3,68 +3,69 @@ title: Synology DSM 6
 weight: 22
 ---
 
-このチュートリアルは最新のDSM v6を使用しています。
+> サードパーティによる代替の最新チュートリアルは[こちら](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/)にあります。
 
-### Docker のインストール
+このチュートリアルは最新の DSM v6 と v7 に基づいています。
 
-パッケージマネージャを開き、dockerをインストールします
-
-|             |                                                   |
-| --------------- | -------------------------------------------------------- |
-![](images/package-manager.png) | ![](images/docker.png)
-
-
-### RustDeskサーバーのインストール
-
-| Dockerのレジストリからrustdesk-serverを検索しダブルクリックでインストールします | rustdesk-server イメージをインストールしダブルクリックで rustdesk-server コンテナを作成します |
-| --------------- | -------------------------------------------------------- |
-![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png)
-
-
-### hbbsコンテナの作成
-
-上記のように rustdesk-server イメージをダブルクリックして新しいコンテナを作成し名前を `hbbs` にします。
-![](images/hbbs.png) 
-
-"Advanced Settings" をクリックします。
-
-- 自動再起動を有効にする
-![](images/auto-restart.png) 
-
-- "Use the same network as Docker host" を有効にします。 ホストの詳細については [こちら](/docs/en/self-host/install/#net-host) を確認してください
-![](images/host-net.png) 
-
-- コンテナ内のホームディレクトリ `/root` をホストディレクトリ (例: `Shared/test/`) に配置するとhbbsはこのディレクトリにいくつかのファイル (`鍵`ファイルを含む) を生成します
-| 配置 | ホームディレクトリに生成されるファイル |
-|-- | -- |
-![](images/mount.png?width=500px) | ![](images/mounted-dir.png?width=300px) 
-
-- コマンドの設定
 {{% notice note %}}
-Synology の OS は Debian ベースなのでホストネット (--net=host) は問題なく動作するので `-p` オプションでポートをマッピングする必要はありません。
+DSM 7.2 アップデート後、Docker は新しい「Container Manager」にアップグレードされました。代わりに[この記事](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7)をご確認ください。
+{{% /notice %}}
 
-`192.168.16.98` はプライベートネットワークのIPでここではデモのために使用しています。デプロイ時にはパブリックIPに設定してください。
+## Docker をインストール
+
+| パッケージセンターを開く | Docker をインストール |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/package-manager.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/docker.png) |
+
+## RustDesk Server をインストール
+
+| Docker のレジストリで rustdesk-server を検索し、ダブルクリックでインストール | インストールされた rustdesk-server イメージ、ダブルクリックで rustdesk-server コンテナを作成 |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/rustdesk-server-installed.png) |
+
+## hbbs コンテナを作成
+
+上記の通り、rustdesk-server イメージをダブルクリックして新しいコンテナを作成し、名前を `hbbs` に設定します。
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs.png)
+
+上記の `詳細設定` をクリックします。
+
+- `自動再起動を有効にする` を有効にします。
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/auto-restart.png)
+
+- `Docker ホストと同じネットワークを使用する` を有効にします。ホストネットについて詳しくは、[こちら](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host)をご確認ください。
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/host-net.png)
+
+- ホストディレクトリ（例：`/home/rustdesk/`）を `/root` にマウントします。hbbs はこのディレクトリにいくつかのファイル（データベースと `key` ファイル）を生成し、これらは再起動後も永続化される必要があります。
+
+| マウント | ホストディレクトリに生成されるファイル |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mount.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mounted-dir.png) |
+
+- コマンドを設定
+{{% notice note %}}
+Synology の OS は Debian ベースなので、ホストネット（--net=host）は正常に動作します。`-p` オプションでポートをマップする必要はありません。
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v3) 
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs-cmd.png?v3)
 
 - 完了
-  
-![](images/hbbs-config.png) 
 
-### hbbr コンテナの作成
+## hbbr コンテナを作成
 
-上記の `hbbs` の手順を繰り返してください。ただしコンテナ名を `hbbr` にコマンドを `hbbr` に変更してください。
+上記の `hbbs` の手順を繰り返しますが、コンテナ名を `hbbr` にし、コマンド（コマンド設定ステップ）は `hbbr` にしてください。
 
-![](images/hbbr-config.png) 
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbr-config.png)
 
-### hbbr/hbbs コンテナ
+## hbbr/hbbs コンテナ
 
-![](images/containers.png?width=500px)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/containers.png)
 
+| コンテナをダブルクリックしてログを確認 | hbbs/hbbr がホストネットワークを使用していることを再確認 |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/log.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/network-types.png) |
 
-| コンテナをダブルクリックしログを確認する | ホストネットワークを使用したhbbs/hbbrの二重確認 |
-|-- | -- |
-![](images/log.png?width=500px) | ![](images/network-types.png?width=500px)
+## キーを取得
 
+File Station を使用して以前に設定したフォルダを参照し、`id_ed25519.pub` をダウンロードしてテキストエディタで開いてキーを確認します。

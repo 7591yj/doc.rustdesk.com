@@ -1,120 +1,52 @@
 ---
 title: インストール
-weight: 10
+weight: 1
 ---
 
-## 簡単に自分専用のサーバーを構築できます
------------
+## ビデオチュートリアル
+YouTubeには多くのビデオチュートリアルがあります、https://github.com/rustdesk/rustdesk/wiki/FAQ#video-tutorials。
 
-### STEP-1 : サーバーサイドソフトウェアのダウンロード
+## サーバー要件
+ハードウェア要件は非常に低く、基本的なクラウドサーバーの最小構成で十分で、CPUとメモリの要件は最小限です。Raspberry Piや同様のものも使用できます。ネットワークサイズに関しては、TCPホールパンチング直接接続が失敗した場合、リレートラフィックが消費されます。リレー接続のトラフィックは、解像度設定と画面更新に応じて30 K/sから3 M/s（1920x1080画面）の間です。オフィス作業の需要のみの場合、トラフィックは約100 K/sです。
 
-[ダウンロード](https://github.com/rustdesk/rustdesk-server/) もしくはDocker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags) からダウンロードします。
-
-対応するプラットフォーム:
-  - Linux
-  - Windows
-
-このドキュメントではLinux用ビルドを使用して構築します。
-
-ビルドには2つの実行ファイルとフォルダがあります:
-   - hbbs - RustDesk ID/Rendezvous サーバー
-   - hbbr - RustDesk リレーサーバー
-
-Centos7 でビルドされ Centos7/8, Ubuntu18/20 で動作確認されています。
-
-#### サーバーの要件
-ハードウェアの要件は非常に低くクラウドサーバーの最小構成で十分でありCPUとメモリは必要最低限で済みます。ネットワーク帯域については、TCPホールパンチングへのダイレクト接続に失敗した場合に中継トラフィックを使用します。中継トラフィックは解像度設定や画面更新速度にもよりますが 30K-3M/s (1920x1080画面) ほどです。 オフィスワーク需要のみであれば、100K/s程度のトラフィックになります。
-
-
-### STEP-2 : サーバ上でhbbsとhbbrを実行します
-
-あなたのサーバー (Centos または Ubuntu) でhbbs/hbbrを実行します。[pm2](https://pm2.keymetrics.io/) を使用してサービスを管理することを推奨します。
-
+## ファイアウォール
+UFWをインストールしている場合は、次のコマンドを使用してファイアウォールを設定してください：
 ```
-./hbbs
-./hbbr 
+ufw allow 21114:21119/tcp
+ufw allow 21116/udp
+sudo ufw enable
 ```
 
-もしくは hbbs/hbbr を pm2 を使用して実行します
+## インストール
+### 方法1：Docker（推奨）
 
 ```
-pm2 start hbbs
-pm2 start hbbr 
+bash <(wget -qO- https://get.docker.com)
+wget rustdesk.com/oss.yml -O compose.yml
+sudo docker compose up -d
 ```
 
-<a name="demo"></a>
-{{% notice note %}}
-pm2 を動作させるには nodejs v16+ が必要です。pm2 を実行できない場合 (例えば `pm2 list` に hbbs/hbbr が表示されない時) はLTS版の node.js を https://nodejs.org からダウンロードしインストールしてください。もし hbbs/hbbr を再起動後に自動実行させたいなら `pm2 save` と `pm2 startup` を確認してみてください。 詳しくは [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/) から確認できます。 ログを記録するのは [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate) を使うのがオススメです。
+詳細については、[Docker](/docs/en/self-host/rustdesk-server-oss/docker/)をご確認ください。
 
-{{% /notice %}}
+### 方法2：シンプルなインストールスクリプトを使用してsystemdサービスとして独自のサーバーをインストール
+スクリプトは[Techahold](https://github.com/techahold/rustdeskinstall)でホストされており、私たちの[Discord](https://discord.com/invite/nDceKgxnkV)でサポートされています。
 
-デフォルトでは hbbs は 21115(tcp) と 21116(tcp/udp) と 21118(tcp) を使用し hbbr は 21117(tcp) と 21119(tcp) を使用します。ファイアウォールでこれらのポートを必ず開放してください。**21116はTCPとUDPの両方で開放する必要があることに注意してください。** 21115 はNATタイプの確認、21116/UDP はTCPホールパンチング,コネクションサービス、21117はリレーサービス、21118 と 21119 はWebクライアントのサポートに使用します。ウェブクライアント(21118, 21119) のサポートが不要な場合は該当するポートを無効にしても良いです。
+現在、スクリプトはリレーおよびシグナルサーバー（hbbrとhbbs）をダウンロードしてセットアップし、設定を生成し、クライアントへの簡単なデプロイのためにパスワード保護されたWebページでホストします。
 
-- TCP(**21115, 21116, 21117, 21118, 21119**)
-- UDP(**21116**)
-
-また "-h" オプションをつけて実行するとヘルプが表示されますのでお好みのポートを指定してください。
-
-#### Dockerの例
-
+次のコマンドを実行してください：
 ```
-sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
+wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.sh
+chmod +x install.sh
+./install.sh
 ```
 
-<a name="net-host"></a>
+[Techahold](https://github.com/techahold/rustdeskinstall)のリポジトリには更新スクリプトもあります。
 
-{{% notice note %}}
---net=host は私の知る限り Linux のみで動作し hbbs/hbbr はコンテナのip (172.17.0.1) ではなく実際の接続ipを参照します
-もし --net=host がうまく動けば -p オプションは使用しません。
+そこから、インストールの最後に表示されるIP/DNSとキーをメモし、それらをクライアントの設定 > ネットワーク > ID/リレーサーバーの`IDサーバー`と`キー`フィールドにそれぞれ挿入し、他のフィールドは空白のままにしてください（下記の注を参照）。
 
-**お使いのプラットフォームで接続に問題がある場合は --net=host を削除してください**
-{{% /notice %}}
+### 方法3：Debianディストリビューション用のdebファイルを使用してsystemdサービスとして独自のサーバーをインストール
 
+[ダウンロード](https://github.com/rustdesk/rustdesk-server/releases/latest)からdebファイルを自分でダウンロードし、`apt-get -f install <filename>.deb`または`dpkg -i <filename>.deb`でインストールしてください。
 
-### STEP-3 : クライアント側でhbbs/hbbrのアドレスを設定する
-
-IDの右側にあるメニューボタンをクリックし "ID/Relay Server" を選択します。
-
-![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
-
-IDサーバ入力欄にhbbsのホストまたはipアドレスを入力します（ローカル側＋リモート側）他の2つのアドレスは空白でも構いません。特に設定しない場合はRustDeskが自動的に入力します。中継サーバーはhbbr (21117ポート) を参照します。
-
-例:
-
-```
-hbbs.example.com
-```
-
-または
-
-```
-hbbs.example.com:21116
-```
-
-![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
-
-#### rustdesk.exe のファイル名を変更して設定する (Windowsのみ)
-
-`rustdesk.exe` を rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe に変更します。例: rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe 設定情報は about ウィンドウに以下のように表示されます。
-
-{{% notice note %}}
-`host` と `key` の両方を設定する必要がありどちらか片方でも欠けていると動作しません。
-{{% /notice %}}
-
-| メニュー | About ページ |
-| -- | -- |
-![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
-
-## 鍵
------------
-古いバージョンとは異なりこのバージョンでは鍵が必須ですが自分で設定する必要はありません。hbbs が初めて起動された時に暗号化された秘密鍵と公開鍵のペアが自動的に生成されます (それぞれ実行ディレクトリの `id_ed25519` と `id_ed25519.pub` ファイルにあります)
-
-前のステップで `Key:` (公開鍵ファイル `id_ed25519.pub` の内容) を記入しなかった場合接続には影響しませんが接続は暗号化されません。
-
-````
-cat ./id_ed25519.pub
-````
-
-鍵を変更したい場合は `id_ed25519` と `id_ed25519.pub` を削除し hbbs/hbbr を再起動すると新しい鍵ペアが生成されます。
+## クライアントの設定
+[こちら](/docs/en/self-host/client-configuration/#2-manual-config)をご確認ください。
